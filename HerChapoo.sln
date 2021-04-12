@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1259
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooDAL", "ChapooDAL\ChapooDAL.csproj", "{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooLogic", "ChapooLogic\ChapooLogic.csproj", "{9461B255-F150-43CA-8A43-2FBA4E922F5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooModel", "ChapooModel\ChapooModel.csproj", "{4A66D395-5928-40A5-B60E-0927156F3A47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9461B255-F150-43CA-8A43-2FBA4E922F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9461B255-F150-43CA-8A43-2FBA4E922F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9461B255-F150-43CA-8A43-2FBA4E922F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9461B255-F150-43CA-8A43-2FBA4E922F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A66D395-5928-40A5-B60E-0927156F3A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A66D395-5928-40A5-B60E-0927156F3A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A66D395-5928-40A5-B60E-0927156F3A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A66D395-5928-40A5-B60E-0927156F3A47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
