@@ -10,6 +10,7 @@ namespace ChapooModel
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("test");
         }
     }
 }
