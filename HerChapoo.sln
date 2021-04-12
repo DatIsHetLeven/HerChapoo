@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapooDAL", "ChapooDAL\ChapooDAL.csproj", "{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631ACB90-344B-4C0F-95F5-4A5FD4E6EDD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB1E796D-90B3-4677-8F79-93D782653E29}
+	EndGlobalSection
+EndGlobal
