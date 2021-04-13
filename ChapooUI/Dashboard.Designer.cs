@@ -48,6 +48,7 @@
             this.btn_Tafel_1.TabIndex = 0;
             this.btn_Tafel_1.Text = "1";
             this.btn_Tafel_1.UseVisualStyleBackColor = true;
+            this.btn_Tafel_1.Click += new System.EventHandler(this.btn_Tafel_1_Click);
             // 
             // btn_Tafel_2
             // 
@@ -57,6 +58,7 @@
             this.btn_Tafel_2.TabIndex = 1;
             this.btn_Tafel_2.Text = "2";
             this.btn_Tafel_2.UseVisualStyleBackColor = true;
+            this.btn_Tafel_2.Click += new System.EventHandler(this.btn_Tafel_2_Click);
             // 
             // btn_Tafel_3
             // 

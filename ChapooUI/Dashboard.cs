@@ -16,5 +16,25 @@ namespace ChapooUI
         {
             InitializeComponent();
         }
+
+        private void btn_Tafel_1_Click(object sender, EventArgs e)
+        {
+            goToTableChoiche(1);
+        }
+
+        private void btn_Tafel_2_Click(object sender, EventArgs e)
+        {
+            goToTableChoiche(2);
+        }
+
+        private void goToTableChoiche(int tableId)
+        {
+            string tableNumber = tableId.ToString();
+            this.Hide();
+            TableChoice tableChoice = new TableChoice();
+            tableChoice.ShowDialog(tableId);
+            
+            this.Close();
+        }
     }
 }

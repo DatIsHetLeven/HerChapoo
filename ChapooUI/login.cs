@@ -17,5 +17,13 @@ namespace ChapooUI
             InitializeComponent();
         }
 
+        //Button om in te loggen
+        private void btn_Inloggen_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboardView = new Dashboard();
+            dashboardView.ShowDialog();
+            this.Close();
+        }
     }
 }

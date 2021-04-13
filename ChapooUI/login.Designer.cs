@@ -80,6 +80,7 @@
             this.btn_Inloggen.TabIndex = 12;
             this.btn_Inloggen.Text = "Inloggen";
             this.btn_Inloggen.UseVisualStyleBackColor = false;
+            this.btn_Inloggen.Click += new System.EventHandler(this.btn_Inloggen_Click);
             // 
             // pictureBox1
             // 
