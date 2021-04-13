@@ -38,6 +38,7 @@
             this.btn_Tafel_8 = new System.Windows.Forms.Button();
             this.btn_Tafel_9 = new System.Windows.Forms.Button();
             this.btn_Tafel_10 = new System.Windows.Forms.Button();
+            this.txt2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_Tafel_1
@@ -132,11 +133,20 @@
             this.btn_Tafel_10.Text = "10";
             this.btn_Tafel_10.UseVisualStyleBackColor = true;
             // 
+            // txt2
+            // 
+            this.txt2.Location = new System.Drawing.Point(258, 32);
+            this.txt2.Name = "txt2";
+            this.txt2.Size = new System.Drawing.Size(62, 20);
+            this.txt2.TabIndex = 10;
+            this.txt2.Text = "2";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 653);
+            this.Controls.Add(this.txt2);
             this.Controls.Add(this.btn_Tafel_10);
             this.Controls.Add(this.btn_Tafel_9);
             this.Controls.Add(this.btn_Tafel_8);
@@ -150,6 +160,7 @@
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,5 +176,6 @@
         private System.Windows.Forms.Button btn_Tafel_8;
         private System.Windows.Forms.Button btn_Tafel_9;
         private System.Windows.Forms.Button btn_Tafel_10;
+        private System.Windows.Forms.TextBox txt2;
     }
 }

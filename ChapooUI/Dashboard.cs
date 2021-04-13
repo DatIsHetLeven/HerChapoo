@@ -31,8 +31,8 @@ namespace ChapooUI
         {
             string tableNumber = tableId.ToString();
             this.Hide();
-            TableChoice tableChoice = new TableChoice();
-            tableChoice.ShowDialog(tableId);
+            TableChoice tableChoice = new TableChoice(tableId);
+            tableChoice.ShowDialog();
             
             this.Close();
         }

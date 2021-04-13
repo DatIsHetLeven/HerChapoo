@@ -31,7 +31,7 @@
             this.btn_Menu = new System.Windows.Forms.Button();
             this.btn_Bon = new System.Windows.Forms.Button();
             this.btn_Reservate = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_Show_Table_Number = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Menu
@@ -61,24 +61,27 @@
             this.btn_Reservate.Text = "Reservate";
             this.btn_Reservate.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // lbl_Show_Table_Number
             // 
-            this.textBox1.Location = new System.Drawing.Point(560, 476);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 3;
+            this.lbl_Show_Table_Number.AutoSize = true;
+            this.lbl_Show_Table_Number.Location = new System.Drawing.Point(258, 22);
+            this.lbl_Show_Table_Number.Name = "lbl_Show_Table_Number";
+            this.lbl_Show_Table_Number.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Show_Table_Number.TabIndex = 4;
+            this.lbl_Show_Table_Number.Text = "label1";
             // 
             // TableChoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 628);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(813, 628);
+            this.Controls.Add(this.lbl_Show_Table_Number);
             this.Controls.Add(this.btn_Reservate);
             this.Controls.Add(this.btn_Bon);
             this.Controls.Add(this.btn_Menu);
             this.Name = "TableChoice";
             this.Text = "TableChoice";
+            this.Load += new System.EventHandler(this.TableChoice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,6 +92,6 @@
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Button btn_Bon;
         private System.Windows.Forms.Button btn_Reservate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_Show_Table_Number;
     }
 }
