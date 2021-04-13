@@ -43,6 +43,7 @@
             this.btn_Menu.TabIndex = 0;
             this.btn_Menu.Text = "Menu";
             this.btn_Menu.UseVisualStyleBackColor = true;
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
             // 
             // btn_Bon
             // 
@@ -61,15 +62,15 @@
             this.btn_Reservate.TabIndex = 2;
             this.btn_Reservate.Text = "Reservate";
             this.btn_Reservate.UseVisualStyleBackColor = true;
+            this.btn_Reservate.Click += new System.EventHandler(this.btn_Reservate_Click);
             // 
             // lbl_Show_Table_Number
             // 
             this.lbl_Show_Table_Number.AutoSize = true;
             this.lbl_Show_Table_Number.Location = new System.Drawing.Point(258, 22);
             this.lbl_Show_Table_Number.Name = "lbl_Show_Table_Number";
-            this.lbl_Show_Table_Number.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Show_Table_Number.Size = new System.Drawing.Size(0, 13);
             this.lbl_Show_Table_Number.TabIndex = 4;
-            this.lbl_Show_Table_Number.Text = "label1";
             // 
             // btn_Back_To_Dashboard
             // 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,15 +10,14 @@ using System.Windows.Forms;
 
 namespace ChapooUI
 {
-    public partial class login : Form
+    public partial class Menu : Form
     {
-        public login()
+        public Menu()
         {
             InitializeComponent();
         }
-
-        //Button to login
-        private void btn_Inloggen_Click(object sender, EventArgs e)
+        //Back to TableChoice
+        private void btn_Back_To_TableChoice_Click(object sender, EventArgs e)
         {
             this.Hide();
             Dashboard dashboardView = new Dashboard();
