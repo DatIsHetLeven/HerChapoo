@@ -32,6 +32,7 @@
             this.btn_Bon = new System.Windows.Forms.Button();
             this.btn_Reservate = new System.Windows.Forms.Button();
             this.lbl_Show_Table_Number = new System.Windows.Forms.Label();
+            this.btn_Back_To_Dashboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Menu
@@ -70,18 +71,28 @@
             this.lbl_Show_Table_Number.TabIndex = 4;
             this.lbl_Show_Table_Number.Text = "label1";
             // 
+            // btn_Back_To_Dashboard
+            // 
+            this.btn_Back_To_Dashboard.Location = new System.Drawing.Point(30, 27);
+            this.btn_Back_To_Dashboard.Name = "btn_Back_To_Dashboard";
+            this.btn_Back_To_Dashboard.Size = new System.Drawing.Size(146, 44);
+            this.btn_Back_To_Dashboard.TabIndex = 5;
+            this.btn_Back_To_Dashboard.Text = "Back";
+            this.btn_Back_To_Dashboard.UseVisualStyleBackColor = true;
+            this.btn_Back_To_Dashboard.Click += new System.EventHandler(this.btn_Back_To_Dashboard_Click);
+            // 
             // TableChoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 628);
+            this.Controls.Add(this.btn_Back_To_Dashboard);
             this.Controls.Add(this.lbl_Show_Table_Number);
             this.Controls.Add(this.btn_Reservate);
             this.Controls.Add(this.btn_Bon);
             this.Controls.Add(this.btn_Menu);
             this.Name = "TableChoice";
             this.Text = "TableChoice";
-            this.Load += new System.EventHandler(this.TableChoice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +104,6 @@
         private System.Windows.Forms.Button btn_Bon;
         private System.Windows.Forms.Button btn_Reservate;
         private System.Windows.Forms.Label lbl_Show_Table_Number;
+        private System.Windows.Forms.Button btn_Back_To_Dashboard;
     }
 }

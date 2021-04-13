@@ -17,22 +17,20 @@ namespace ChapooUI
         {
             InitializeComponent();
         }
+        //Constructor -> Tablenumbers from the button
         public TableChoice(int tableId)
         {
             InitializeComponent();
             this.TableId = tableId;
             lbl_Show_Table_Number.Text = ("Tablenumber : "+ TableId.ToString());
-
         }
-        private void TableChoice_Load(object sender, EventArgs e)
+
+        private void btn_Back_To_Dashboard_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
+            this.Close();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-        
     }
 }
