@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using ChapooModel;
 
 namespace ChapooDAL
 {
@@ -10,15 +12,17 @@ namespace ChapooDAL
         DataTable dataTable = new DataTable();
 
         //Set table to reservated
-        public void SetTableReservated(int tableId)
+        public void SetTableReservated(Table table)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
-            con.Open();
-            SqlCommand cmd;
-            cmd = new SqlCommand("Update  [table] set TableStatus=2 where TableId=@tafelid", con);
-            cmd.Parameters.Add("@tafelid", tableId);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            string query = "Update  [table] set TableStatus=2 where TableId=@tafelid";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("TableId", table.TableId),
+                new SqlParameter("TableStatus",table.TableStatus)
+            };
+            ExecuteEditQuery(query, sqlParameters);
+
+
         }
     }
 }
