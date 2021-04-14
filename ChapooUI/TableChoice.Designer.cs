@@ -33,6 +33,7 @@
             this.btn_Reservate = new System.Windows.Forms.Button();
             this.lbl_Show_Table_Number = new System.Windows.Forms.Label();
             this.btn_Back_To_Dashboard = new System.Windows.Forms.Button();
+            this.Btn_FreeTable = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Menu
@@ -82,11 +83,22 @@
             this.btn_Back_To_Dashboard.UseVisualStyleBackColor = true;
             this.btn_Back_To_Dashboard.Click += new System.EventHandler(this.btn_Back_To_Dashboard_Click);
             // 
+            // Btn_FreeTable
+            // 
+            this.Btn_FreeTable.Location = new System.Drawing.Point(562, 22);
+            this.Btn_FreeTable.Name = "Btn_FreeTable";
+            this.Btn_FreeTable.Size = new System.Drawing.Size(160, 61);
+            this.Btn_FreeTable.TabIndex = 6;
+            this.Btn_FreeTable.Text = "Free Table";
+            this.Btn_FreeTable.UseVisualStyleBackColor = true;
+            this.Btn_FreeTable.Click += new System.EventHandler(this.Btn_FreeTable_Click);
+            // 
             // TableChoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 628);
+            this.Controls.Add(this.Btn_FreeTable);
             this.Controls.Add(this.btn_Back_To_Dashboard);
             this.Controls.Add(this.lbl_Show_Table_Number);
             this.Controls.Add(this.btn_Reservate);
@@ -106,5 +118,6 @@
         private System.Windows.Forms.Button btn_Reservate;
         private System.Windows.Forms.Label lbl_Show_Table_Number;
         private System.Windows.Forms.Button btn_Back_To_Dashboard;
+        private System.Windows.Forms.Button Btn_FreeTable;
     }
 }

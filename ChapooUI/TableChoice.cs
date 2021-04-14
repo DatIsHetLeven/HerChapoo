@@ -14,7 +14,8 @@ namespace ChapooUI
 {
     public partial class TableChoice : Form
     {
-        public int TableId;
+        Table_Service table_Service = new Table_Service();
+        private int TableId;
         public TableChoice()
         {
             InitializeComponent();
@@ -45,9 +46,22 @@ namespace ChapooUI
         //Reservate Table
         private void btn_Reservate_Click(object sender, EventArgs e)
         {
-            Table_Service table_Service = new Table_Service();
-            table_Service.SetTableReservate(1);
-           
+            //Table reserveren -> if not working show error message
+            try
+            {
+                table_Service.SetTableReservate(TableId);
+                MessageBox.Show("Table has been reservated");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error occured : Table could not be reservated");
+            }
+        }
+        //Make table Free
+        private void Btn_FreeTable_Click(object sender, EventArgs e)
+        {
+            table_Service.SetTableFree(TableId);
+            MessageBox.Show("Table has been cleared");
         }
     }
 }

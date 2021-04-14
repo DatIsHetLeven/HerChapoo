@@ -11,12 +11,14 @@ namespace ChapooLogic
 {
     public class Table_Service
     {
+        Table_DAO table_DAO = new Table_DAO();
+
+        //Set table to status: Reservated
         public void SetTableReservate(int tableId)
         {
-            Table_DAO table_DAO = new Table_DAO();
+           
             try
             {
-                
                 table_DAO.SetTableReservated(tableId);
             }
             catch (Exception)
@@ -24,6 +26,12 @@ namespace ChapooLogic
                 
                 throw;
             }
+        }
+
+        //Set table to status : Free
+        public void SetTableFree(int tableId)
+        {
+                table_DAO.SetTableFree(tableId);
         }
     }
 }

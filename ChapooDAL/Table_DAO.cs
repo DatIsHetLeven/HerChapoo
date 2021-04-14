@@ -11,10 +11,18 @@ namespace ChapooDAL
     {
         DataTable dataTable = new DataTable();
 
-        //Set table to reservated
+        //Set table to status ; reservated
         public void SetTableReservated(int table)
         {
             string query = "Update [table] set TableStatus=2 where TableId=@tafelid";
+            query = query.Replace("@tafelid", table.ToString());
+            ExecuteEditQuery(query);
+        }
+
+        //Set table to status ; Free
+        public void SetTableFree(int table)
+        {
+            string query = "Update [table] set TableStatus=1 where TableId=@tafelid";
             query = query.Replace("@tafelid", table.ToString());
             ExecuteEditQuery(query);
         }
