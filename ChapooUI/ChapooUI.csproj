@@ -111,6 +111,10 @@
       <Project>{9461b255-f150-43ca-8a43-2fba4e922f5a}</Project>
       <Name>ChapooLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ChapooModel\ChapooModel.csproj">
+      <Project>{7822b110-7bf0-4d66-b85a-81aa31c37f62}</Project>
+      <Name>ChapooModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

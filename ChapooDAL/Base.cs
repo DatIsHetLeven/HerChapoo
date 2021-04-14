@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using ChapooModel;
 
 
 namespace ChapooDAL
