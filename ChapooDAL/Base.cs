@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
+
 namespace ChapooDAL
 {
     public abstract class Base
@@ -71,6 +72,28 @@ namespace ChapooDAL
             {
                 // Print.ErrorLog(e);
                 throw;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        // Insert/Edit/Update without parameters
+        protected void ExecuteEditQuery(String query)
+        {
+            SqlCommand command = new SqlCommand();
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                command.Connection = OpenConnection();
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+
             }
             finally
             {

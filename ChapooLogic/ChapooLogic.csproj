@@ -49,10 +49,6 @@
       <Project>{631acb90-344b-4c0f-95f5-4a5fd4e6edd0}</Project>
       <Name>ChapooDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ChapooModel\ChapooModel.csproj">
-      <Project>{4a66d395-5928-40a5-b60e-0927156f3a47}</Project>
-      <Name>ChapooModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
