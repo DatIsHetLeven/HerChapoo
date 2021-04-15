@@ -42,16 +42,15 @@ namespace ChapooUI
                 {
                     MessageBox.Show("error occured : User does not exist");
                 }
-                //Clear both fields after not succeeded.
-                txt_LoginPassword.Clear();
-                txt_LoginUsername.Clear();
             }
             //If at least on field is empty -> show error.
             else
             {
-                MessageBox.Show("Error occured : Username or Password is empty!");
+                MessageBox.Show("Error occured : Username and/ or Password is empty!");
             }
-
+            //Clear both fields after not succeeded.
+            txt_LoginPassword.Clear();
+            txt_LoginUsername.Clear();
 
         }
     }
