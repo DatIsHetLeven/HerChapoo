@@ -1,0 +1,38 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ChapooModel;
+
+namespace ChapooDAL
+{
+    public class User_DAO : Base
+    {
+        public User GetUser(string userName, string password)
+        {
+            string query = "select [UserId], [UserName], [userPassword], [UserCode] from [User] where UserName = '" + userName + "' and   userPassword =  '" + password + "' ";
+            return RetrieveUser(ExecuteSelectQuery(query));
+        }
+
+        private User RetrieveUser(DataTable dataTable)
+        {
+            int userId = 0;
+            string userName = "";
+            string userPassword = "";
+            int userCode = 0;
+
+            foreach (DataRow i in dataTable.Rows)
+            {
+                {
+                    userId = (int)i["UserId"];
+                    userName = (string)i["UserName"];
+                    userPassword = (string)i["userPassword"];
+                    userCode = (int)i["UserCode"];
+                };
+            }
+            return new User(userId, userName, userPassword, userCode);
+        }
+    }
+}

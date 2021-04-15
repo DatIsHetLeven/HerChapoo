@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapooLogic;
+using ChapooModel;
 
 namespace ChapooUI
 {
     public partial class login : Form
     {
+        User_Service user_Service = new User_Service();
         public login()
         {
             InitializeComponent();
@@ -21,14 +24,29 @@ namespace ChapooUI
         //Button to login
         private void btn_Inloggen_Click(object sender, EventArgs e)
         {
+            //Check if username and password are not empty.
             if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
             {
-                this.Hide();
-                Dashboard dashboardView = new Dashboard();
-                dashboardView.ShowDialog();
-                this.Close();
-
+                string userName = txt_LoginUsername.Text;
+                string password = txt_LoginPassword.Text;
+                User user = user_Service.GetUser(userName, password);
+                //If user exist
+                if (user.userName != "")
+                {
+                    this.Hide();
+                    Dashboard dashboardView = new Dashboard();
+                    dashboardView.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("error occured : User does not exist");
+                }
+                //Clear both fields after not succeeded.
+                txt_LoginPassword.Clear();
+                txt_LoginUsername.Clear();
             }
+            //If at least on field is empty -> show error.
             else
             {
                 MessageBox.Show("Error occured : Username or Password is empty!");

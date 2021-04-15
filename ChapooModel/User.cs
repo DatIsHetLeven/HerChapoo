@@ -11,6 +11,14 @@ namespace ChapooModel
         public int userId { get; set; }
         public string userName { get; set; }
         public string userPassword { get; set; }
-        public int userCodr { get; set; }
+        public int userCode { get; set; }
+
+        public User(int UserId, string UserName, string UserPassword, int UserCode)
+        {
+            this.userId = UserId;
+            this.userName = UserName;
+            this.userName = UserPassword;
+            this.userCode = UserCode;
+        }
     }
 }
