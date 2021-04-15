@@ -106,6 +106,7 @@
             this.Controls.Add(this.btn_Menu);
             this.Name = "TableChoice";
             this.Text = "TableChoice";
+            this.Load += new System.EventHandler(this.TableChoice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

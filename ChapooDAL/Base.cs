@@ -123,7 +123,7 @@ namespace ChapooDAL
             }
             catch (SqlException e)
             {
-                // Print.ErrorLog(e);
+                Console.Error.WriteLine(e.Message);
                 return null;
                 throw;
             }

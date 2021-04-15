@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapooLogic;
+using ChapooModel;
 
 
 namespace ChapooUI
@@ -15,6 +16,7 @@ namespace ChapooUI
     public partial class TableChoice : Form
     {
         Table_Service table_Service = new Table_Service();
+        List<Table> tables;
         private int TableId;
         public TableChoice()
         {
@@ -62,6 +64,11 @@ namespace ChapooUI
         {
             table_Service.SetTableFree(TableId);
             MessageBox.Show("Table has been cleared");
+        }
+
+        private void TableChoice_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
