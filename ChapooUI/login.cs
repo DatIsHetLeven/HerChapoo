@@ -21,10 +21,20 @@ namespace ChapooUI
         //Button to login
         private void btn_Inloggen_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Dashboard dashboardView = new Dashboard();
-            dashboardView.ShowDialog();
-            this.Close();
+            if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
+            {
+                this.Hide();
+                Dashboard dashboardView = new Dashboard();
+                dashboardView.ShowDialog();
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Error occured : Username or Password is empty!");
+            }
+
+
         }
     }
 }
