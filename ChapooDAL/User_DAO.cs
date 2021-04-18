@@ -10,12 +10,13 @@ namespace ChapooDAL
 {
     public class User_DAO : Base
     {
+        //Check if user does exist.(login)
         public User GetUser(string userName, string password)
         {
             string query = "select [UserId], [UserName], [userPassword], [UserCode] from [User] where UserName = '" + userName + "' and   userPassword =  '" + password + "' ";
             return RetrieveUser(ExecuteSelectQuery(query));
         }
-
+        //If user exist -> fill all the info
         private User RetrieveUser(DataTable dataTable)
         {
             int userId = 0;
@@ -33,6 +34,14 @@ namespace ChapooDAL
                 };
             }
             return new User(userId, userName, userPassword, userCode);
+        }
+
+
+        //Create new user /Insert new user in db
+        public void InserNewUser(string userName, string password, int rol)
+        {
+            string query = $"Insert into [User] (userName, userPassword, UserCode) Values('{userName}', '{password}', '{rol}')";
+            ExecuteEditQuery(query);
         }
     }
 }

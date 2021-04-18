@@ -16,5 +16,12 @@ namespace ChapooLogic
         {
             return user_DAO.GetUser(userName, password);
         }
+
+
+        //Create new user -> insert db
+        public void createUser(string userName, string password, int rol)
+        {
+            user_DAO.InserNewUser(userName, password, rol);
+        }
     }
 }

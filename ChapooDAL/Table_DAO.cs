@@ -28,7 +28,7 @@ namespace ChapooDAL
             //sda.Fill(dt);
             //return dt;
         }
-        //Set table to status ; reservated
+        //Set table to status : reservated
         public void SetTableReservated(int table)
         {
             string query = "Update [table] set TableStatus=2 where TableId=@tafelid";
@@ -36,7 +36,7 @@ namespace ChapooDAL
             ExecuteEditQuery(query);
         }
 
-        //Set table to status ; Free
+        //Set table to status : Free
         public void SetTableFree(int table)
         {
             string query = "Update [table] set TableStatus=1 where TableId=@tafelid";

@@ -24,6 +24,11 @@ namespace ChapooUI
         //Button to login
         private void btn_Inloggen_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            AdminAllUsers adminAll = new AdminAllUsers();
+            adminAll.ShowDialog();
+            this.Close();
+
             //Check if username and password are not empty.
             if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
             {
@@ -33,10 +38,22 @@ namespace ChapooUI
                 //If user exist
                 if (user.userName != "")
                 {
-                    this.Hide();
-                    Dashboard dashboardView = new Dashboard();
-                    dashboardView.ShowDialog();
-                    this.Close();
+                    //If user is Admin
+                    if (user.userCode == 3)
+                    {
+                        this.Hide();
+                        AdminDashboard adminDashboard = new AdminDashboard();
+                        adminDashboard.ShowDialog();
+                        this.Close();
+                    }
+                    //If user is not an Admin
+                    else
+                    {
+                        this.Hide();
+                        Dashboard dashboardView = new Dashboard();
+                        dashboardView.ShowDialog();
+                        this.Close();
+                    }
                 }
                 else
                 {

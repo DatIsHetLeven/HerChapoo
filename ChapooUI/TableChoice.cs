@@ -16,7 +16,6 @@ namespace ChapooUI
     public partial class TableChoice : Form
     {
         Table_Service table_Service = new Table_Service();
-        List<Table> tables;
         private int TableId;
         public TableChoice()
         {

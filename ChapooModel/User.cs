@@ -17,7 +17,7 @@ namespace ChapooModel
         {
             this.userId = UserId;
             this.userName = UserName;
-            this.userName = UserPassword;
+            this.userPassword = UserPassword;
             this.userCode = UserCode;
         }
     }
