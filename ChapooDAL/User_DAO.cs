@@ -77,7 +77,6 @@ namespace ChapooDAL
             }
             return new User(userId, userName, title, PrivateKey);
         }
-
         //return userId
         private void UserId()
         {
