@@ -19,24 +19,15 @@ namespace ChapooUI
         User_Service user_Service = new User_Service();
         public AdminAllUsers()
         {
-
             InitializeComponent();
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-
-            SqlConnection conn = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
-            conn.Open();
-            SqlCommand cmsd = new SqlCommand("select userId, userName as Name, title, userKey as PrivateKey from[user], [UserRol] where userCode = Rol_Id", conn);
-            SqlDataAdapter sda = new SqlDataAdapter(cmsd);
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
+            //List for user -> referesh
         }
 
         private void AdminAllUsers_Load(object sender, EventArgs e)
         {
-
             List<string> drop = new List<string>();
             drop.Add("test");
             drop.Add("test2");
@@ -54,25 +45,28 @@ namespace ChapooUI
             foreach (var i in drop)
             {
                 //comboBox1.Items.Add(i);
-                comboBox1.ValueMember = "userId";
-                comboBox1.DataSource = dtt;
+                drop_UserId.ValueMember = "userId";
+                drop_UserId.DataSource = dtt;
             }
             con.Close();
 
             //Dropdown userRol -> create user
-            DataTable dttt = new DataTable();
+            //DataTable dttt = new DataTable();
 
-            SqlConnection connn = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
-            connn.Open();
-            SqlCommand cmdd = new SqlCommand("select rol_id,Title from[UserRol]", con);
-            SqlDataAdapter sdaaa = new SqlDataAdapter(cmdd);
-            sdaaa.Fill(dttt);
-            foreach (var i in drop)
-            {
-                drop_UserRol.ValueMember = "Title";
-                drop_UserRol.DataSource = dttt;
-            }
-            con.Close();
+            //SqlConnection connn = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
+            //connn.Open();
+            //SqlCommand cmdd = new SqlCommand("select rol_id,Title from[UserRol]", con);
+            //SqlDataAdapter sdaaa = new SqlDataAdapter(cmdd);
+            //sdaaa.Fill(dttt);
+            //foreach (var i in drop)
+            //{
+            //    drop_UserRol.ValueMember = "Title";
+            //    drop_UserRol.DataSource = dttt;
+            //}
+            //con.Close();
+
+            drop_UserRol.ValueMember = "Title";
+            drop_UserRol.DataSource = user_Service.UserId();
 
             DataTable dt = new DataTable();
 
@@ -83,10 +77,8 @@ namespace ChapooUI
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
 
-
-
-
         }
+
         //Button create user 
         private void btn_CreateNewUser_Click(object sender, EventArgs e)
         {
@@ -97,7 +89,7 @@ namespace ChapooUI
 
             if (userName !="" && password !="")
             {
-                if (rol == "baman")
+                if (rol == "Baman")
                 {
                     userRol = 2;
                 }
@@ -107,13 +99,15 @@ namespace ChapooUI
                 }
                 user_Service.createUser(userName, password, userRol);
                 MessageBox.Show("User has been created");
+                txt_NewUserName.Clear();
+                txt_UserPassword.Clear();
             }
             else
             {
                 MessageBox.Show("please fill all the fields in.");
             }
         }
-
+        //Button Go back to AdminDashboard
         private void btn_BackAdminDasboard_Click(object sender, EventArgs e)
         {
             AdminDashboard adminDashboard = new AdminDashboard();
@@ -121,26 +115,13 @@ namespace ChapooUI
             adminDashboard.ShowDialog();
             this.Close();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Create Private key -> to reset password
         private void btn_AddPrivateKey_Click(object sender, EventArgs e)
         {
+            int userId = (drop_UserId.SelectedIndex +1);
+            string privateKey = txt_PrivateKey.Text;
 
-            SqlConnection con = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("update [user]set userKey=@privateKey where userid=@userId", con);
-            cmd.Parameters.Add("@privateKey", txt_PrivateKey.Text);
-            cmd.Parameters.Add("@userId", comboBox1.Text);
-            cmd.ExecuteNonQuery();
-
-            txt_PrivateKey.Clear();
-            dataGridView1.Update();
-            dataGridView1.Refresh();
-
+            user_Service.createPrivateKey(privateKey, userId);
 
         }
     }

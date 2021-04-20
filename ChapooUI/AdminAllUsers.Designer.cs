@@ -30,9 +30,10 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.drop_UserRol = new System.Windows.Forms.ComboBox();
             this.btn_AddPrivateKey = new System.Windows.Forms.Button();
             this.txt_PrivateKey = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.drop_UserId = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_CreateNewUser = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_BackAdminDasboard = new System.Windows.Forms.Button();
-            this.drop_UserRol = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.panel1.Controls.Add(this.drop_UserRol);
             this.panel1.Controls.Add(this.btn_AddPrivateKey);
             this.panel1.Controls.Add(this.txt_PrivateKey);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.drop_UserId);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btn_CreateNewUser);
@@ -82,6 +82,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 212);
             this.panel1.TabIndex = 12;
+            // 
+            // drop_UserRol
+            // 
+            this.drop_UserRol.FormattingEnabled = true;
+            this.drop_UserRol.Location = new System.Drawing.Point(86, 123);
+            this.drop_UserRol.Name = "drop_UserRol";
+            this.drop_UserRol.Size = new System.Drawing.Size(100, 21);
+            this.drop_UserRol.TabIndex = 28;
             // 
             // btn_AddPrivateKey
             // 
@@ -101,14 +109,13 @@
             this.txt_PrivateKey.Size = new System.Drawing.Size(121, 20);
             this.txt_PrivateKey.TabIndex = 26;
             // 
-            // comboBox1
+            // drop_UserId
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(637, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 25;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.drop_UserId.FormattingEnabled = true;
+            this.drop_UserId.Location = new System.Drawing.Point(637, 57);
+            this.drop_UserId.Name = "drop_UserId";
+            this.drop_UserId.Size = new System.Drawing.Size(121, 21);
+            this.drop_UserId.TabIndex = 25;
             // 
             // label8
             // 
@@ -235,14 +242,6 @@
             this.btn_BackAdminDasboard.UseVisualStyleBackColor = false;
             this.btn_BackAdminDasboard.Click += new System.EventHandler(this.btn_BackAdminDasboard_Click);
             // 
-            // drop_UserRol
-            // 
-            this.drop_UserRol.FormattingEnabled = true;
-            this.drop_UserRol.Location = new System.Drawing.Point(86, 123);
-            this.drop_UserRol.Name = "drop_UserRol";
-            this.drop_UserRol.Size = new System.Drawing.Size(100, 21);
-            this.drop_UserRol.TabIndex = 28;
-            // 
             // AdminAllUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,7 +280,7 @@
         private System.Windows.Forms.Button btn_BackAdminDasboard;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox drop_UserId;
         private System.Windows.Forms.Button btn_AddPrivateKey;
         private System.Windows.Forms.TextBox txt_PrivateKey;
         private System.Windows.Forms.ComboBox drop_UserRol;

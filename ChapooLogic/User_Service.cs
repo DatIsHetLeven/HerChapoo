@@ -23,5 +23,22 @@ namespace ChapooLogic
         {
             user_DAO.InserNewUser(userName, password, rol);
         }
+
+        //Create private Key -> to reset password.
+        public void createPrivateKey(string privateKey, int userId)
+        {
+            user_DAO.InsertPrivateKey(privateKey, userId);
+        }
+
+        public User GetAllUserList()
+        {
+            return user_DAO.getAllUsersList();
+        }
+
+        //userId
+        public void UserId()
+        {
+            user_DAO.UserId();
+        }
     }
 }
