@@ -19,14 +19,7 @@ namespace ChapooDAL
             DataTable dt = ExecuteSelectQuery(query);
 
             return dt;
-            //DataTable dt = new DataTable();
 
-            //SqlConnection con = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
-            //con.Open();
-            //SqlCommand cmd = new SqlCommand("select * from Tafel where TafelID = '" + TableId + "' and   TafelStatus =  '" + TableStatus + "' ", con);
-            //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //sda.Fill(dt);
-            //return dt;
         }
         //Set table to status : reservated
         public void SetTableReservated(int table)

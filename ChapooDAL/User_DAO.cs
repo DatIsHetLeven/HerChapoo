@@ -35,13 +35,5 @@ namespace ChapooDAL
             }
             return new User(userId, userName, userPassword, userCode);
         }
-
-
-        //Create new user /Insert new user in db
-        public void InserNewUser(string userName, string password, int rol)
-        {
-            string query = $"Insert into [User] (userName, userPassword, UserCode) Values('{userName}', '{password}', '{rol}')";
-            ExecuteEditQuery(query);
-        }
     }
 }

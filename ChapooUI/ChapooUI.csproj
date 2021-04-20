@@ -46,18 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminAllUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminAllUsers.Designer.cs">
-      <DependentUpon>AdminAllUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminDashboard.Designer.cs">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,12 +72,6 @@
     <Compile Include="TableChoice.Designer.cs">
       <DependentUpon>TableChoice.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminAllUsers.resx">
-      <DependentUpon>AdminAllUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminDashboard.resx">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
