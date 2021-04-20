@@ -66,7 +66,7 @@ namespace ChapooUI
             //con.Close();
 
             drop_UserRol.ValueMember = "Title";
-            drop_UserRol.DataSource = user_Service.UserId();
+            //drop_UserRol.DataSource = user_Service.UserId();
 
             DataTable dt = new DataTable();
 
