@@ -32,7 +32,7 @@ namespace ChapooDAL
                     userName = (string)i["userName"];
                     userPassword = (string)i["userPassword"];
                     userCode = (int)i["UserCode"];
-                    userKey = (string)i["userKey"];
+                    userKey = (string)i["userKey"].ToString();
                 };
             }
             return new User(userId, userName, userPassword, userCode, userKey);

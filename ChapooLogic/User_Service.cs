@@ -38,7 +38,7 @@ namespace ChapooLogic
         //userId
         public void UserId()
         {
-            user_DAO.UserId();
+            //user_DAO.UserId();
         }
     }
 }
