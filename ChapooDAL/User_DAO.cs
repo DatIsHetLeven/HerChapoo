@@ -16,6 +16,7 @@ namespace ChapooDAL
             string query = "select [UserId], [UserName], [userPassword], [UserCode] from [User] where UserName = '" + userName + "' and   userPassword =  '" + password + "' ";
             return RetrieveUser(ExecuteSelectQuery(query));
         }
+
         //If user exist -> fill all the info
         private User RetrieveUser(DataTable dataTable)
         {
