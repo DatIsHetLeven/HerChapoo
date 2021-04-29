@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapooLogic;
+using ChapooModel;
 
 using System.Data.SqlClient;
 using System.Configuration;
@@ -16,6 +17,7 @@ namespace ChapooUI
 {
     public partial class AdminAllUsers : Form
     {
+        ListViewItem ListViewItem;
         User_Service user_Service = new User_Service();
         public AdminAllUsers()
         {
@@ -35,20 +37,31 @@ namespace ChapooUI
 
             char[,] arrayUserRol = new char[10,10];
             //Dropdown useriD
-            DataTable dtt = new DataTable();
+            //DataTable dtt = new DataTable();
 
-            SqlConnection con = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select userId from[user]", con);
-            SqlDataAdapter sdaa = new SqlDataAdapter(cmd);
-            sdaa.Fill(dtt);
-            foreach (var i in drop)
-            {
-                //comboBox1.Items.Add(i);
-                drop_UserId.ValueMember = "userId";
-                drop_UserId.DataSource = dtt;
-            }
-            con.Close();
+            //SqlConnection con = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
+            //con.Open();
+            //SqlCommand cmd = new SqlCommand("select userId from[user]", con);
+            //SqlDataAdapter sdaa = new SqlDataAdapter(cmd);
+            //sdaa.Fill(dtt);
+            //foreach (var i in drop)
+            //{
+            //    //comboBox1.Items.Add(i);
+            //    drop_UserId.ValueMember = "userId";
+            //    drop_UserId.DataSource = dtt;
+            //}
+            //con.Close();
+
+            List<string> userIdList = new List<string>();
+            userIdList = user_Service.UserId();
+            drop_UserId.DataSource = userIdList;
+
+
+            List<string> userRolList = new List<string>();
+            userRolList = user_Service.UserRol();
+            drop_UserRol.DataSource = userRolList;
+
+
 
             //Dropdown userRol -> create user
             //DataTable dttt = new DataTable();
@@ -65,23 +78,33 @@ namespace ChapooUI
             //}
             //con.Close();
 
-            drop_UserRol.ValueMember = "Title";
+            //drop_UserRol.ValueMember = "Title";
             //drop_UserRol.DataSource = user_Service.UserId();
 
-            DataTable dt = new DataTable();
 
-            SqlConnection conn = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
-            conn.Open();
-            SqlCommand cmsd = new SqlCommand("select userId, userName as Name, title, userKey as PrivateKey from[user], [UserRol] where userCode = Rol_Id", conn);
-            SqlDataAdapter sda = new SqlDataAdapter(cmsd);
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
+
+            //Get and show List of all users.
+            List<UserList> userList = new List<UserList>();
+            userList = user_Service.GetAllUserList();
+
+            dataGridView1.DataSource = userList;
+
+            //DataTable dt = new DataTable();
+
+            //SqlConnection conn = new SqlConnection(@"Data Source=den1.mssql8.gear.host;Initial Catalog=chapoo1920f05;user=chapoo1920f05;password=Xm8ws!25HZ4~;");
+            //conn.Open(); 
+            //SqlCommand cmsd = new SqlCommand("select userId, userName as Name, title, userKey as PrivateKey from[user], [UserRol] where userCode = Rol_Id", conn);
+            //SqlDataAdapter sda = new SqlDataAdapter(cmsd);
+            //sda.Fill(dt);
+            //dataGridView1.DataSource = dt;
 
         }
 
         //Button create user 
         private void btn_CreateNewUser_Click(object sender, EventArgs e)
         {
+
+
             string userName = txt_NewUserName.Text;
             string password = txt_UserPassword.Text;
             string rol = drop_UserRol.Text;
@@ -89,7 +112,7 @@ namespace ChapooUI
 
             if (userName !="" && password !="")
             {
-                if (rol == "Baman")
+                if (rol == "Barman")
                 {
                     userRol = 2;
                 }
@@ -122,7 +145,7 @@ namespace ChapooUI
             string privateKey = txt_PrivateKey.Text;
 
             user_Service.createPrivateKey(privateKey, userId);
-
         }
+
     }
 }

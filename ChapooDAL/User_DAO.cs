@@ -36,6 +36,7 @@ namespace ChapooDAL
                 };
             }
             return new User(userId, userName, userPassword, userCode, userKey);
+            //return new User();
         }
 
         //Create new user /Insert new user in db
@@ -45,7 +46,7 @@ namespace ChapooDAL
             ExecuteEditQuery(query);
         }
 
-        //Create private key -> to reset password.
+        //Create private key -> so user can reset password.
         public void InsertPrivateKey(string privateKey, int userId)
         {
             string query = $"update [user]set userKey='{privateKey}' where userid='{userId}'";
@@ -53,37 +54,80 @@ namespace ChapooDAL
         }
 
         //Return List of players -> Admin panel.
-        public User getAllUsersList()
+        public List<UserList> getAllUsersList()
         {
-            string query = "select userId, userName as Name, title, userKey as PrivateKey from[user], [UserRol] where userCode = Rol_Id";
+            string query = "select [userId], [userName], [title], [userKey]  from[user], [UserRol] where userCode = Rol_Id";
             return RetrieveAllUsers(ExecuteSelectQuery(query));
         }
-        //Return values for list
-        private User RetrieveAllUsers(DataTable dataTable)
+        //Return users values for list(admin page)
+        private List<UserList> RetrieveAllUsers(DataTable dataTable)
         {
             int userId = 0;
             string userName = "";
             string title = "";
-            string PrivateKey = "";
+            string userKey = "";
 
-            foreach (DataRow i in dataTable.Rows)
+            List<UserList> UserList = new List<UserList>();
+
+            foreach (DataRow dr in dataTable.Rows)
             {
+                UserList user = new UserList(userId, userName, title, userKey);
                 {
-                    userId = (int)i["UserId"];
-                    userName = (string)i["Name"];
-                    title = (string)i["title"];
-                    PrivateKey = (string)i["PrivateKey"].ToString();
+                    userId = (int)dr["UserId"];
+                    userName = (string)dr["userName"].ToString();
+                    title = (string)dr["title"].ToString();
+                    userKey = (string)dr["userKey"].ToString();
                 };
+                if (user.userId != 0)
+                {
+                    UserList.Add(user);
+                }
             }
-            return new User(userId, userName, title, PrivateKey);
+            return UserList;
         }
-        //return userId
-        private void UserId()
+        private void UserIdtest()
         {
             string query = "select rol_id,Title from[UserRol]";
             ExecuteEditQuery(query);
         }
+        //List userId
+        public List<string> UserIdDropdown()
+        {
+            string query = "select userId from[user]";
+            return UserId(ExecuteSelectQuery(query));
+        }
 
+        private List<string> UserId(DataTable datatable)
+        {
+            int userId = 1;
 
+            List<string> UserIdList = new List<string>();
+
+            foreach (DataRow item in datatable.Rows)
+            {
+                userId = (int)item["userId"];
+                UserIdList.Add(userId.ToString());
+            }
+            return UserIdList;
+        }
+
+        //List userRol
+        public List<string> userRol()
+        {
+            string query = "select [Title] from [userrol]";
+            return UserRoll(ExecuteSelectQuery(query));
+        }
+
+        private List<string> UserRoll(DataTable datatable)
+        {
+            List<string> UserIdList = new List<string>();
+
+            foreach (DataRow item in datatable.Rows)
+            {
+                string Title = (string)item["Title"];
+                UserIdList.Add(Title.ToString());
+            }
+            return UserIdList;
+        }
     }
 }

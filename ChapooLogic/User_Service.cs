@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+using System.Collections.Generic;
 using System.Data;
 using ChapooDAL;
 using ChapooModel;
@@ -30,15 +31,27 @@ namespace ChapooLogic
             user_DAO.InsertPrivateKey(privateKey, userId);
         }
 
-        public User GetAllUserList()
+        public List<UserList> GetAllUserList()
         {
-            return user_DAO.getAllUsersList();
+            List<UserList> userList;
+            userList = user_DAO.getAllUsersList();
+            return userList;
         }
 
         //userId
-        public void UserId()
+        public List<string> UserId()
         {
-            //user_DAO.UserId();
+            List<string> userIdList;
+            userIdList = user_DAO.UserIdDropdown();
+            return userIdList;
+        }
+
+        //UserRol
+        public List<string> UserRol()
+        {
+            List<string> userRolList;
+            userRolList = user_DAO.userRol();
+            return userRolList;
         }
     }
 }
