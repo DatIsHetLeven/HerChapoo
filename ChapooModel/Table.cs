@@ -10,5 +10,11 @@ namespace ChapooModel
     {
         public int TableId { get; set; }
         public int TableStatus { get; set; }
+
+        public Table(int tableId, int tableStatus)
+        {
+            this.TableId = tableId;
+            this.TableStatus = tableStatus;
+        }
     }
 }

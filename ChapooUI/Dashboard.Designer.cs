@@ -149,6 +149,7 @@
             this.Controls.Add(this.btn_Tafel_1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
 
         }

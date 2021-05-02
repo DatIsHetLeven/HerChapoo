@@ -40,5 +40,13 @@ namespace ChapooLogic
         {
             return table_DAO.GetTableStatus(TableId, TableStatus);
         }
+
+        //Get tableinfo
+        public List<Table> GetTables()
+        {
+            List<Table> tableList;
+            tableList = table_DAO.TableInfo();
+            return tableList;
+        }
     }
 }

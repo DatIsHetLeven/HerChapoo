@@ -15,34 +15,40 @@ namespace ChapooUI
     public partial class Dashboard : Form
     {
 
-
-
-        
         public Dashboard()
         {
             InitializeComponent();
             Table_Service table_Service = new Table_Service();
+
             DataTable dataTable = new DataTable();
+
+            List<Table> tableId = new List<Table>();
+            tableId = table_Service.GetTables();
+
+
             List<Button> TableButtonList = new List<Button>();
             TableButtonList.Add(btn_Tafel_1);
             TableButtonList.Add(btn_Tafel_2);
+            TableButtonList.Add(btn_Tafel_3);
+            TableButtonList.Add(btn_Tafel_4);
 
-            int tableCount = 1;
             foreach (Button item in TableButtonList)
             {
-                dataTable = table_Service.GetTableStatus(tableCount, 2);
-
-                if (dataTable.Rows.Count == 1)
+                foreach (var i in tableId)
                 {
-                    item.BackColor = Color.Red;
+                    if (i.TableStatus == 1)
+                    {
+                        item.BackColor = Color.Red;
+                        tableId.Remove(i);
+                    }
+                    else
+                    {
+                        item.BackColor = Color.Lime;
+                        tableId.Remove(i);
+                    }
+                    break;
                 }
-                else
-                {
-                    item.BackColor = Color.Lime;
-                }
-                tableCount++;
             }
-
         }
         //Table 1
         private void btn_Tafel_1_Click(object sender, EventArgs e)
@@ -61,6 +67,11 @@ namespace ChapooUI
             TableChoice tableChoice = new TableChoice(tableId);
             tableChoice.ShowDialog();
             this.Close();
-        }        
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

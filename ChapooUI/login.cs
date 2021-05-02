@@ -25,8 +25,8 @@ namespace ChapooUI
         private void btn_Inloggen_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminAllUsers adminAll = new AdminAllUsers();
-            adminAll.ShowDialog();
+            Dashboard dashboardVieww = new Dashboard();
+            dashboardVieww.ShowDialog();
             this.Close();
 
             //Check if username and password are not empty.
