@@ -58,6 +58,12 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="BarKitchenDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarKitchenDashboard.Designer.cs">
+      <DependentUpon>BarKitchenDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +76,23 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lunch.Designer.cs">
+      <DependentUpon>Lunch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderDashboard.Designer.cs">
+      <DependentUpon>OrderDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,14 +108,23 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarKitchenDashboard.resx">
+      <DependentUpon>BarKitchenDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lunch.resx">
+      <DependentUpon>Lunch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderDashboard.resx">
+      <DependentUpon>OrderDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

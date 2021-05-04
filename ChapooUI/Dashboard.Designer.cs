@@ -38,6 +38,7 @@
             this.btn_Tafel_8 = new System.Windows.Forms.Button();
             this.btn_Tafel_9 = new System.Windows.Forms.Button();
             this.btn_Tafel_10 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Tafel_1
@@ -132,11 +133,24 @@
             this.btn_Tafel_10.Text = "10";
             this.btn_Tafel_10.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkRed;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 35);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Log Out";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 653);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Tafel_10);
             this.Controls.Add(this.btn_Tafel_9);
             this.Controls.Add(this.btn_Tafel_8);
@@ -166,5 +180,6 @@
         private System.Windows.Forms.Button btn_Tafel_8;
         private System.Windows.Forms.Button btn_Tafel_9;
         private System.Windows.Forms.Button btn_Tafel_10;
+        private System.Windows.Forms.Button button1;
     }
 }

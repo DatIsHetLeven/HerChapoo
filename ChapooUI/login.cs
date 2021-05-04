@@ -24,10 +24,21 @@ namespace ChapooUI
         //Button to login
         private void btn_Inloggen_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Dashboard dashboardVieww = new Dashboard();
-            dashboardVieww.ShowDialog();
-            this.Close();
+            if (txt_LoginUsername.Text == "a")
+            {
+                this.Hide();
+                BarKitchenDashboard barKitchenDashboard = new BarKitchenDashboard();
+                barKitchenDashboard.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Hide();
+                Dashboard dashboardVieww = new Dashboard();
+                dashboardVieww.ShowDialog();
+                this.Close();
+            }
+
 
             //Check if username and password are not empty.
             if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")

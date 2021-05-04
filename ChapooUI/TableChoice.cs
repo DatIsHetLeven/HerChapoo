@@ -40,7 +40,7 @@ namespace ChapooUI
         private void btn_Menu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu menuView = new Menu();
+            Menu menuView = new Menu(TableId);
             menuView.ShowDialog();
             this.Close();
         }
@@ -66,6 +66,16 @@ namespace ChapooUI
         }
 
         private void TableChoice_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Show_Table_Number_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Bon_Click(object sender, EventArgs e)
         {
 
         }

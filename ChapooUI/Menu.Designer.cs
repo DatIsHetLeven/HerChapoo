@@ -43,6 +43,7 @@
             this.btn_Lunch.TabIndex = 0;
             this.btn_Lunch.Text = "Lunch";
             this.btn_Lunch.UseVisualStyleBackColor = true;
+            this.btn_Lunch.Click += new System.EventHandler(this.btn_Lunch_Click);
             // 
             // btn_Diner
             // 
@@ -70,6 +71,7 @@
             this.Btn_Order_Overview.TabIndex = 3;
             this.Btn_Order_Overview.Text = "Bestelling Overzicht";
             this.Btn_Order_Overview.UseVisualStyleBackColor = true;
+            this.Btn_Order_Overview.Click += new System.EventHandler(this.Btn_Order_Overview_Click);
             // 
             // btn_Back_To_TableChoice
             // 
@@ -93,6 +95,7 @@
             this.Controls.Add(this.btn_Lunch);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
         }

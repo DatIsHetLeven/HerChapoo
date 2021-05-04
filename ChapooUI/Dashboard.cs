@@ -73,5 +73,13 @@ namespace ChapooUI
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login login = new login();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -54,6 +54,7 @@
             this.btn_Bon.TabIndex = 1;
             this.btn_Bon.Text = "Receipt";
             this.btn_Bon.UseVisualStyleBackColor = true;
+            this.btn_Bon.Click += new System.EventHandler(this.btn_Bon_Click);
             // 
             // btn_Reservate
             // 
@@ -72,6 +73,7 @@
             this.lbl_Show_Table_Number.Name = "lbl_Show_Table_Number";
             this.lbl_Show_Table_Number.Size = new System.Drawing.Size(0, 13);
             this.lbl_Show_Table_Number.TabIndex = 4;
+            this.lbl_Show_Table_Number.Click += new System.EventHandler(this.lbl_Show_Table_Number_Click);
             // 
             // btn_Back_To_Dashboard
             // 
