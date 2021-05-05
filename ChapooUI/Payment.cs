@@ -7,16 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapooLogic;
+using ChapooModel;
+
 
 namespace ChapooUI
 {
     public partial class Payment : Form
     {
         private int TotalAmount;
+        private int TableId;
+        SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         Dashboard dashboard = new Dashboard();
-        public Payment(int totalAmount)
+        Table_Service table_Service = new Table_Service();
+
+
+        public Payment(int totalAmount,int tableId)
         {
             this.TotalAmount = totalAmount;
+            this.TableId = tableId;
             InitializeComponent();
 
             txt_Amount.Text = TotalAmount.ToString();
@@ -24,11 +33,6 @@ namespace ChapooUI
             string tip = txt_TipAmount.Text.ToString();
             string totalToPay = totalAmount.ToString() + tip;
             txt_TotalAmount.Text = totalToPay.ToString();
-            calculate();
-        }
-        private void calculate()
-        {
-
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -49,6 +53,8 @@ namespace ChapooUI
         }
         private void FinishPayment()
         {
+            table_Service.SetTableFree(TableId);
+
             MessageBox.Show("Payment was successfully!");
             this.Hide();
             dashboard.ShowDialog();

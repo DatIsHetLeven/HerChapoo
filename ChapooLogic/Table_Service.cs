@@ -34,6 +34,10 @@ namespace ChapooLogic
         {
                 table_DAO.SetTableFree(tableId);
         }
+        public void SetTableInUse(int tableId)
+        {
+            table_DAO.SetTableInUse(tableId);
+        }
 
         //Get table Status
         public DataTable GetTableStatus(int TableId, int TableStatus)

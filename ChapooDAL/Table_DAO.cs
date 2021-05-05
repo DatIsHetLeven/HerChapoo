@@ -43,6 +43,13 @@ namespace ChapooDAL
             query = query.Replace("@tafelid", table.ToString());
             ExecuteEditQuery(query);
         }
+        //Set table In use
+        public void SetTableInUse(int tableId)
+        {
+            string query = "Update [table] set TableStatus=3 where TableId=@tafelid";
+            query = query.Replace("@tafelid", tableId.ToString());
+            ExecuteEditQuery(query);
+        }
 
         //Get all table info 
         public List<Table> TableInfo()

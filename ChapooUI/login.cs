@@ -40,45 +40,45 @@ namespace ChapooUI
             }
 
 
-            //Check if username and password are not empty.
-            if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
-            {
-                string userName = txt_LoginUsername.Text;
-                string password = txt_LoginPassword.Text;
-                User user = user_Service.GetUser(userName, password);
-                //If user exist
-                if (user.userName != "")
-                {
-                    //If user is Admin
-                    if (user.userCode == 3)
-                    {
-                        this.Hide();
-                        AdminDashboard adminDashboard = new AdminDashboard();
-                        adminDashboard.ShowDialog();
-                        this.Close();
-                    }
-                    //If user is not an Admin
-                    else
-                    {
-                        this.Hide();
-                        Dashboard dashboardView = new Dashboard();
-                        dashboardView.ShowDialog();
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("error occured : User does not exist");
-                }
-            }
-            //If at least on field is empty -> show error.
-            else
-            {
-                MessageBox.Show("Error occured : Username and/ or Password is empty!");
-            }
-            //Clear both fields after not succeeded.
-            txt_LoginPassword.Clear();
-            txt_LoginUsername.Clear();
+            ////Check if username and password are not empty.
+            //if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
+            //{
+            //    string userName = txt_LoginUsername.Text;
+            //    string password = txt_LoginPassword.Text;
+            //    User user = user_Service.GetUser(userName, password);
+            //    //If user exist
+            //    if (user.userName != "")
+            //    {
+            //        //If user is Admin
+            //        if (user.userCode == 3)
+            //        {
+            //            this.Hide();
+            //            AdminDashboard adminDashboard = new AdminDashboard();
+            //            adminDashboard.ShowDialog();
+            //            this.Close();
+            //        }
+            //        //If user is not an Admin
+            //        else
+            //        {
+            //            this.Hide();
+            //            Dashboard dashboardView = new Dashboard();
+            //            dashboardView.ShowDialog();
+            //            this.Close();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("error occured : User does not exist");
+            //    }
+            //}
+            ////If at least on field is empty -> show error.
+            //else
+            //{
+            //    MessageBox.Show("Error occured : Username and/ or Password is empty!");
+            //}
+            ////Clear both fields after not succeeded.
+            //txt_LoginPassword.Clear();
+            //txt_LoginUsername.Clear();
 
         }
     }

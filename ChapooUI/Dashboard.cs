@@ -32,23 +32,32 @@ namespace ChapooUI
             TableButtonList.Add(btn_Tafel_3);
             TableButtonList.Add(btn_Tafel_4);
 
+            // Check status
             foreach (Button item in TableButtonList)
             {
                 foreach (var i in tableId)
                 {
                     if (i.TableStatus == 1)
                     {
-                        item.BackColor = Color.Red;
+                        item.BackColor = Color.Lime;
+                        tableId.Remove(i);
+                    }
+                    else if (i.TableStatus == 3)
+                    {
+                        item.BackColor = Color.Blue;
                         tableId.Remove(i);
                     }
                     else
                     {
-                        item.BackColor = Color.Lime;
+                        item.BackColor = Color.Red;
                         tableId.Remove(i);
                     }
                     break;
                 }
             }
+            //If order change color
+
+
         }
         //Table 1
         private void btn_Tafel_1_Click(object sender, EventArgs e)

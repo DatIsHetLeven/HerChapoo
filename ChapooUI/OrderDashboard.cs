@@ -17,6 +17,7 @@ namespace ChapooUI
     {
         private int TableId;
         private int TotalPrice;
+        Order_Service order_Service = new Order_Service();
 
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         public OrderDashboard(int tableId)
@@ -49,8 +50,34 @@ namespace ChapooUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            //List of all items
+            List<SelectedItem> selectedItems = new List<SelectedItem>();
+            selectedItems = selectedItems_Service.GetCurrentItems(TableId);
+            //Max id value
+            List<int> listMaxId = order_Service.GetMaxId();
+            int number = listMaxId[0];
+            int newOrderId = (number + 1);
+
+            //Insert to db
+            foreach (var item in selectedItems)
+            {
+                int ii = 0;
+                foreach (DataGridViewRow i in datagrid_CurrentOrder.Rows)
+                {
+                    string menuitem = datagrid_CurrentOrder.Rows[ii].Cells["menuItem"].FormattedValue.ToString();
+                    string prijs = datagrid_CurrentOrder.Rows[ii].Cells["prijs"].FormattedValue.ToString();
+                    int prijsToPay = int.Parse(prijs);
+                    order_Service.createOrder(newOrderId, TableId, menuitem, prijsToPay);
+
+                    ii++;
+                }
+                break;
+            }
+
+            selectedItems_Service.removeItems(TableId);
             this.Hide();
-            Payment payment = new Payment(TotalPrice);
+            Payment payment = new Payment(TotalPrice, TableId);
             payment.ShowDialog();
             this.Close();
         }

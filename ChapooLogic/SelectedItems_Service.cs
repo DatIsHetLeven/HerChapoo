@@ -38,5 +38,10 @@ namespace ChapooLogic
             selectedItemsList = selectedItems_DAO.GetSelectedOrder(tableid);
             return selectedItemsList;
         }
+        //delete
+        public void removeItems(int tableId)
+        {
+            selectedItems_DAO.ClearItems(tableId);
+        }
     }
 }

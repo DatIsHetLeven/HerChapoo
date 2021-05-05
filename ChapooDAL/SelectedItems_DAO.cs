@@ -24,7 +24,7 @@ namespace ChapooDAL
         //Select order
         public List<SelectedItem> GetSelectedOrder(int tableid)
         {
-            string query = $"select tableId, menuItem, Prijs, status from [SelectedItems] where tableId = '{tableid}'";
+            string query = $"select tableId, menuItem, Prijs, status from [SelectedItems] where tableId = '{tableid}' and status =2";
             return GetItems(ExecuteSelectQuery(query));
         }
         //Return
@@ -34,30 +34,29 @@ namespace ChapooDAL
             string menuItem = "";
             int Prijs = 0;
             int status = 0;
-
             List<SelectedItem> selectedItems = new List<SelectedItem>();
+            foreach (DataRow item in dataTable.Rows){
 
-            foreach (DataRow item in dataTable.Rows)
-            {
+                tableId = (int)item["tableId"];
+                menuItem = (string)item["menuItem"].ToString();
+                Prijs = (int)item["Prijs"];
+                status = (int)item["status"];
                 SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status);
-                {
-                    tableId = (int)item["tableId"];
-                    menuItem = (string)item["menuItem"].ToString();
-                    Prijs = (int)item["Prijs"];
-                    status = (int)item["status"];
-                }
-                if (selectedItem.tableid != 0)
                 {
                     selectedItems.Add(selectedItem);
                 }
-                
-            }
-            return selectedItems;
+            }return selectedItems;
         }
         //Update
         public void UpdateStatus(string menuItem, int tableId)
         {
             string query = $"update SelectedItems set status = 2 where MenuItem = '{menuItem}' and tableId = '{tableId}'";
+            ExecuteEditQuery(query);
+        }
+        //delete
+        public void ClearItems(int tableid)
+        {
+            string query = $"delete from [SelectedItems] where tableId = '{tableid}'";
             ExecuteEditQuery(query);
         }
 

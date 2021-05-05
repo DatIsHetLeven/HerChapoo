@@ -15,6 +15,7 @@ namespace ChapooUI
     public partial class Lunch : Form
     {
         int TableId;
+        Table_Service table_Service = new Table_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         public Lunch(int tableid)
         {
@@ -45,7 +46,10 @@ namespace ChapooUI
             int verm = prijs1 * prijs2;
             MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + txt_aantal.Text.ToString() + " , Prijs : " + verm.ToString());
             selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
-            MessageBox.Show(verm.ToString());
+            txt_aantal.Clear();
+
+            //set table to in use
+            table_Service.SetTableInUse(TableId);
         }
     }
 }
