@@ -34,5 +34,18 @@ namespace ChapooUI
             string tableId = datgrid_OpenOrder.Rows[item].Cells["tableid"].FormattedValue.ToString();
             selectedItems_Service.updateStatus(menuitem, int.Parse(tableId));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            login login = new login();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }

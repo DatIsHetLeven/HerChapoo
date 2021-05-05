@@ -46,7 +46,11 @@ namespace ChapooDAL
                     Prijs = (int)item["Prijs"];
                     status = (int)item["status"];
                 }
-                selectedItems.Add(selectedItem);
+                if (selectedItem.tableid != 0)
+                {
+                    selectedItems.Add(selectedItem);
+                }
+                
             }
             return selectedItems;
         }

@@ -34,11 +34,11 @@ namespace ChapooDAL
                     Prijs = (int)item["prijs"];
                     MenuItemNaam = (string)item["menuItemNaam"].ToString();
                     //MenuItemCategorie = (string)item["menuItemCategorie"].ToString();
-                    ListMenuItem.Add(menuItem);
-                    //if (menuItem.MenuItemId != 0)
-                    //{
-                    //    ListMenuItem.Add(menuItem);
-                    //}
+                    //ListMenuItem.Add(menuItem);
+                    if (menuItem.Prijs != 0)
+                    {
+                        ListMenuItem.Add(menuItem);
+                    }
                 };
             }
             return ListMenuItem;
