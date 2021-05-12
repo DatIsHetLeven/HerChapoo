@@ -35,6 +35,7 @@
             this.lbl_wachtwoord = new System.Windows.Forms.Label();
             this.btn_Inloggen = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_resetPsswrd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,11 +94,22 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_resetPsswrd
+            // 
+            this.btn_resetPsswrd.Location = new System.Drawing.Point(378, 339);
+            this.btn_resetPsswrd.Name = "btn_resetPsswrd";
+            this.btn_resetPsswrd.Size = new System.Drawing.Size(75, 23);
+            this.btn_resetPsswrd.TabIndex = 14;
+            this.btn_resetPsswrd.Text = "Forgot Password";
+            this.btn_resetPsswrd.UseVisualStyleBackColor = true;
+            this.btn_resetPsswrd.Click += new System.EventHandler(this.btn_resetPsswrd_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 559);
+            this.Controls.Add(this.btn_resetPsswrd);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Inloggen);
             this.Controls.Add(this.lbl_wachtwoord);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Label lbl_wachtwoord;
         private System.Windows.Forms.Button btn_Inloggen;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_resetPsswrd;
     }
 }
 

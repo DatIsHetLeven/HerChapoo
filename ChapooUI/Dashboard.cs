@@ -56,8 +56,6 @@ namespace ChapooUI
                 }
             }
             //If order change color
-
-
         }
         //Table 1
         private void btn_Tafel_1_Click(object sender, EventArgs e)

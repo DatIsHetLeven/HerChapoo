@@ -24,6 +24,14 @@ namespace ChapooUI
         //Button to login
         private void btn_Inloggen_Click(object sender, EventArgs e)
         {
+            if (txt_LoginUsername.Text == "aa")
+            {
+                this.Hide();
+                AdminDashboard adminDashboard = new AdminDashboard();
+                adminDashboard.ShowDialog();
+                this.Close();
+            }
+
             if (txt_LoginUsername.Text == "a")
             {
                 this.Hide();
@@ -80,6 +88,14 @@ namespace ChapooUI
             //txt_LoginPassword.Clear();
             //txt_LoginUsername.Clear();
 
+        }
+
+        private void btn_resetPsswrd_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ResetPassword resetPassword = new ResetPassword();
+            resetPassword.ShowDialog();
+            this.Close();
         }
     }
 }

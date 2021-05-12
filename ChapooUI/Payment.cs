@@ -18,7 +18,7 @@ namespace ChapooUI
         private int TotalAmount;
         private int TableId;
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
-        Dashboard dashboard = new Dashboard();
+        Dashboard dashboard;
         Table_Service table_Service = new Table_Service();
 
 
@@ -38,25 +38,29 @@ namespace ChapooUI
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
+            dashboard = new Dashboard();
             dashboard.ShowDialog();
             this.Close();
         }
 
         private void btn_PayIdeal_Click(object sender, EventArgs e)
         {
+            table_Service.SetTableFree(TableId);
             FinishPayment();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            table_Service.SetTableFree(TableId);
             FinishPayment();
         }
         private void FinishPayment()
         {
-            table_Service.SetTableFree(TableId);
+            //table_Service.SetTableFree(TableId);
 
             MessageBox.Show("Payment was successfully!");
             this.Hide();
+            dashboard = new Dashboard();
             dashboard.ShowDialog();
             this.Close();
         }
