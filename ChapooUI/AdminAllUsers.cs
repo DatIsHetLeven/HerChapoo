@@ -23,30 +23,33 @@ namespace ChapooUI
         {
             InitializeComponent();
         }
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            //List for user -> referesh
-        }
-
         private void AdminAllUsers_Load(object sender, EventArgs e)
         {
+            GetAllData();
+        }
+        //Get all data -> fill in lists
+        public void GetAllData()
+        {
+            string titel;
             //Create object list of userlist
             List<UserList> userLists = new List<UserList>();
             userLists = user_Service.GetAllUserList();
             //List of items you want
             List<string> userTitle = new List<string>();
             List<int> userID = new List<int>();
+            List<UserList> users = new List<UserList>();
             //Adding specifiek data form object to list
             foreach (var item in userLists)
             {
-                userTitle.Add(item.title);
+                titel = item.title;
+                if (!userTitle.Contains(titel))
+                    userTitle.Add(item.title);
                 userID.Add(item.userId);
             }
             drop_UserRol.DataSource = userTitle;
             drop_UserId.DataSource = userID;
             dataGridView1.DataSource = userLists;
         }
-
         //Button create user 
         private void btn_CreateNewUser_Click(object sender, EventArgs e)
         {
@@ -58,23 +61,20 @@ namespace ChapooUI
             if (userName !="" && password !="")
             {
                 if (rol == "Barman")
-                {
                     userRol = 2;
-                }
                 else if (rol == "Admin")
-                {
                     userRol = 3;
-                }
                 user_Service.createUser(userName, password, userRol);
                 MessageBox.Show("User has been created");
                 txt_NewUserName.Clear();
                 txt_UserPassword.Clear();
+                GetAllData();
             }
             else
-            {
                 MessageBox.Show("please fill all the fields in.");
-            }
         }
+        //Get latest data
+
         //Button Go back to AdminDashboard
         private void btn_BackAdminDasboard_Click(object sender, EventArgs e)
         {
@@ -88,7 +88,16 @@ namespace ChapooUI
         {
             int userId = (drop_UserId.SelectedIndex +1);
             string privateKey = txt_PrivateKey.Text;
-            user_Service.createPrivateKey(privateKey, userId);
+            if (privateKey != "")
+            {
+                user_Service.createPrivateKey(privateKey, userId);
+                txt_PrivateKey.Clear();
+                GetAllData();
+            }
+            else
+                MessageBox.Show("Please fill in the PrivateKey");
+            
+
         }
 
     }

@@ -21,6 +21,11 @@ namespace ChapooModel
             this.title = Title;
             this.userKey = UserKey;
         }
+        public UserList(int UserId, string UserName)
+        {
+            this.userId = UserId;
+            this.userName = UserName;
+        }
 
     }
 }

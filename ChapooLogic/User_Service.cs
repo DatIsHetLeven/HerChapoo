@@ -33,20 +33,6 @@ namespace ChapooLogic
             userList = user_DAO.getAllUsersList();
             return userList;
         }
-        //userId
-        public List<string> UserId()
-        {
-            List<string> userIdList;
-            userIdList = user_DAO.UserIdDropdown();
-            return userIdList;
-        }
-        //UserRol
-        public List<string> UserRol()
-        {
-            List<string> userRolList;
-            userRolList = user_DAO.userRol();
-            return userRolList;
-        }
         //Reset Password
         public void ResetPassword(string privateKey, int userId, string Password)
         {

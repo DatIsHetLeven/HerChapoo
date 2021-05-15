@@ -34,8 +34,8 @@
             this.lbl_gebruikersnaam = new System.Windows.Forms.Label();
             this.lbl_wachtwoord = new System.Windows.Forms.Label();
             this.btn_Inloggen = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_resetPsswrd = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +83,16 @@
             this.btn_Inloggen.UseVisualStyleBackColor = false;
             this.btn_Inloggen.Click += new System.EventHandler(this.btn_Inloggen_Click);
             // 
+            // btn_resetPsswrd
+            // 
+            this.btn_resetPsswrd.Location = new System.Drawing.Point(378, 339);
+            this.btn_resetPsswrd.Name = "btn_resetPsswrd";
+            this.btn_resetPsswrd.Size = new System.Drawing.Size(75, 23);
+            this.btn_resetPsswrd.TabIndex = 14;
+            this.btn_resetPsswrd.Text = "Forgot Password";
+            this.btn_resetPsswrd.UseVisualStyleBackColor = true;
+            this.btn_resetPsswrd.Click += new System.EventHandler(this.btn_resetPsswrd_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -93,16 +103,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            // 
-            // btn_resetPsswrd
-            // 
-            this.btn_resetPsswrd.Location = new System.Drawing.Point(378, 339);
-            this.btn_resetPsswrd.Name = "btn_resetPsswrd";
-            this.btn_resetPsswrd.Size = new System.Drawing.Size(75, 23);
-            this.btn_resetPsswrd.TabIndex = 14;
-            this.btn_resetPsswrd.Text = "Forgot Password";
-            this.btn_resetPsswrd.UseVisualStyleBackColor = true;
-            this.btn_resetPsswrd.Click += new System.EventHandler(this.btn_resetPsswrd_Click);
             // 
             // login
             // 

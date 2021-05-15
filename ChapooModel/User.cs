@@ -24,10 +24,5 @@ namespace ChapooModel
             this.userCode = UserCode;
             this.userKey = UserKey;
         }
-
-        public User(int UserId)
-        {
-            this.userId = UserId;
-        }
     }
 }

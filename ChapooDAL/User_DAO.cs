@@ -43,6 +43,12 @@ namespace ChapooDAL
             string query = $"update [user]set userKey='{privateKey}' where userid='{userId}'";
             ExecuteEditQuery(query);
         }
+        //Reset password by User
+        public void ResetPassword(string privateKey, int userId, string Password)
+        {
+            string query = $"update [user] set [userPassword] = '{Password}' where [userId]= '{userId}' AND [userKey] ='{privateKey}' ";
+            ExecuteEditQuery(query);
+        }
         //Return List of players -> Admin panel.
         public List<UserList> getAllUsersList(){
             string query = "select [userId], [userName], [title], [userKey]  from[user], [UserRol] where userCode = Rol_Id Order By [userId]";
@@ -61,43 +67,6 @@ namespace ChapooDAL
                 UserList.Add(user);
             }
             return UserList;
-        }
-
-
-        //List userId
-        public List<string> UserIdDropdown(){
-            string query = "select userId from[user]";
-            return UserId(ExecuteSelectQuery(query));
-        }
-        private List<string> UserId(DataTable datatable){
-            int userId = 1;
-            List<string> UserIdList = new List<string>();
-            foreach (DataRow item in datatable.Rows)
-            {
-                userId = (int)item["userId"];
-                UserIdList.Add(userId.ToString());
-            }
-            return UserIdList;
-        }
-        //List userRol
-        public List<string> userRol(){
-            string query = "select [Title] from [userrol]";
-            return UserRoll(ExecuteSelectQuery(query));
-        }
-        private List<string> UserRoll(DataTable datatable){
-            List<string> UserIdList = new List<string>();
-            foreach (DataRow item in datatable.Rows)
-            {
-                string Title = (string)item["Title"];
-                UserIdList.Add(Title.ToString());
-            }
-            return UserIdList;
-        }
-
-        //Create private key -> so user can reset password.
-        public void ResetPassword(string privateKey, int userId, string Password){
-            string query = $"update [user] set [userPassword] = '{Password}' where [userId]= '{userId}' AND [userKey] ='{privateKey}' ";
-            ExecuteEditQuery(query);
         }
     }
 }
