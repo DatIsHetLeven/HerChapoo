@@ -79,5 +79,21 @@ namespace ChapooUI
         {
 
         }
+
+        private void btn_bestellen_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Bestellen bestellen = new Bestellen(TableId);
+            bestellen.ShowDialog();
+            this.Close();
+        }
+
+        private void Btn_Go_Overzicht_Click(object sender, EventArgs e)
+        {
+            OrderDashboard orderDashboard = new OrderDashboard(TableId);
+            this.Hide();
+            orderDashboard.ShowDialog();
+            this.Close();
+        }
     }
 }

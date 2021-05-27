@@ -73,8 +73,6 @@ namespace ChapooUI
             else
                 MessageBox.Show("please fill all the fields in.");
         }
-        //Get latest data
-
         //Button Go back to AdminDashboard
         private void btn_BackAdminDasboard_Click(object sender, EventArgs e)
         {
@@ -96,9 +94,23 @@ namespace ChapooUI
             }
             else
                 MessageBox.Show("Please fill in the PrivateKey");
-            
+        }
+
+        private void Btn_CreateUser_Click(object sender, EventArgs e)
+        {
+            AdminCreateUser adminCreateUser = new AdminCreateUser();
+            adminCreateUser.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 
+        private void Btn_ChangePassword_Click(object sender, EventArgs e)
+        {
+            AdminChangePassword adminChangePassword = new AdminChangePassword();
+            adminChangePassword.ShowDialog();
+        }
     }
 }

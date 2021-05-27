@@ -48,6 +48,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_BackAdminDasboard = new System.Windows.Forms.Button();
+            this.Btn_CreateUser = new System.Windows.Forms.Button();
+            this.Btn_ChangePassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +84,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 212);
             this.panel1.TabIndex = 12;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // drop_UserRol
             // 
@@ -242,11 +245,33 @@
             this.btn_BackAdminDasboard.UseVisualStyleBackColor = false;
             this.btn_BackAdminDasboard.Click += new System.EventHandler(this.btn_BackAdminDasboard_Click);
             // 
+            // Btn_CreateUser
+            // 
+            this.Btn_CreateUser.Location = new System.Drawing.Point(74, 202);
+            this.Btn_CreateUser.Name = "Btn_CreateUser";
+            this.Btn_CreateUser.Size = new System.Drawing.Size(125, 29);
+            this.Btn_CreateUser.TabIndex = 21;
+            this.Btn_CreateUser.Text = "Create user";
+            this.Btn_CreateUser.UseVisualStyleBackColor = true;
+            this.Btn_CreateUser.Click += new System.EventHandler(this.Btn_CreateUser_Click);
+            // 
+            // Btn_ChangePassword
+            // 
+            this.Btn_ChangePassword.Location = new System.Drawing.Point(634, 202);
+            this.Btn_ChangePassword.Name = "Btn_ChangePassword";
+            this.Btn_ChangePassword.Size = new System.Drawing.Size(125, 29);
+            this.Btn_ChangePassword.TabIndex = 22;
+            this.Btn_ChangePassword.Text = "Change password user";
+            this.Btn_ChangePassword.UseVisualStyleBackColor = true;
+            this.Btn_ChangePassword.Click += new System.EventHandler(this.Btn_ChangePassword_Click);
+            // 
             // AdminAllUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 450);
+            this.Controls.Add(this.Btn_ChangePassword);
+            this.Controls.Add(this.Btn_CreateUser);
             this.Controls.Add(this.btn_BackAdminDasboard);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -284,5 +309,7 @@
         private System.Windows.Forms.Button btn_AddPrivateKey;
         private System.Windows.Forms.TextBox txt_PrivateKey;
         private System.Windows.Forms.ComboBox drop_UserRol;
+        private System.Windows.Forms.Button Btn_CreateUser;
+        private System.Windows.Forms.Button Btn_ChangePassword;
     }
 }

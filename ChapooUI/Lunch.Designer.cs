@@ -41,7 +41,7 @@
             this.datagrid_Lunch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagrid_Lunch.Location = new System.Drawing.Point(155, 45);
             this.datagrid_Lunch.Name = "datagrid_Lunch";
-            this.datagrid_Lunch.Size = new System.Drawing.Size(386, 288);
+            this.datagrid_Lunch.Size = new System.Drawing.Size(350, 274);
             this.datagrid_Lunch.TabIndex = 0;
             // 
             // btn_back
