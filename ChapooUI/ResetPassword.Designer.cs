@@ -74,7 +74,7 @@
             this.panel1.Controls.Add(this.txtUserId);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(125, 87);
+            this.panel1.Location = new System.Drawing.Point(434, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(416, 267);
             this.panel1.TabIndex = 13;
@@ -128,7 +128,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(546, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(1027, 24);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 107);
@@ -138,7 +138,7 @@
             // 
             // btn_ResetPassword
             // 
-            this.btn_ResetPassword.Location = new System.Drawing.Point(239, 385);
+            this.btn_ResetPassword.Location = new System.Drawing.Point(548, 430);
             this.btn_ResetPassword.Name = "btn_ResetPassword";
             this.btn_ResetPassword.Size = new System.Drawing.Size(181, 53);
             this.btn_ResetPassword.TabIndex = 15;
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_ResetPassword);
             this.Controls.Add(this.pictureBox1);

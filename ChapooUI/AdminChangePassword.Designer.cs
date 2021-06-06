@@ -47,6 +47,7 @@
             this.btn_AddPrivateKey.TabIndex = 33;
             this.btn_AddPrivateKey.Text = "Add Private Key";
             this.btn_AddPrivateKey.UseVisualStyleBackColor = false;
+            this.btn_AddPrivateKey.Click += new System.EventHandler(this.btn_AddPrivateKey_Click);
             // 
             // txt_PrivateKey
             // 

@@ -23,14 +23,14 @@ namespace ChapooDAL
             string MenuItemNaam = "";
             string MenuItemCategorie = "";
 
-        List <MenuItem> ListMenuItem = new List<MenuItem>();
+            List<MenuItem> ListMenuItem = new List<MenuItem>();
 
             foreach (DataRow item in datatable.Rows)
             {
-                MenuItem menuItem = new MenuItem(Prijs, MenuItemNaam);
+                MenuItem menuItem = new MenuItem(Prijs, MenuItemNaam, MenuId);
                 {
                     //MenuItemId = (int)item["menuItemId"];
-                    //MenuId = (int)item["menuId"];
+                    MenuId = (int)item["menuId"];
                     Prijs = (int)item["prijs"];
                     MenuItemNaam = (string)item["menuItemNaam"].ToString();
                     //MenuItemCategorie = (string)item["menuItemCategorie"].ToString();

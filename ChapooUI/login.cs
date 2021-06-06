@@ -15,81 +15,65 @@ namespace ChapooUI
 {
     public partial class login : Form
     {
-        User_Service user_Service = new User_Service();
+        private Dashboard Dashboard;
+        private AdminDashboard adminDashboard;
+        private BarKitchenDashboard BarKitchenDashboard;
+        private User_Service user_Service = new User_Service();
         public login()
         {
             InitializeComponent();
         }
 
-        //Button to login
+        //Buttin inloggen
         private void btn_Inloggen_Click(object sender, EventArgs e)
         {
-            if (txt_LoginUsername.Text == "aa")
+            //Check if username and password are not empty.
+            if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
             {
-                this.Hide();
-                AdminDashboard adminDashboard = new AdminDashboard();
-                adminDashboard.ShowDialog();
-                this.Close();
+                string userName = txt_LoginUsername.Text;
+                string password = txt_LoginPassword.Text;
+                User user = user_Service.GetUser(userName, password);
+                //If user exist
+                if (user.userName != "")
+                {
+                    //If Admin
+                    if (user.userCode == 3)
+                    {
+                        this.Hide();
+                        adminDashboard = new AdminDashboard();
+                        adminDashboard.ShowDialog();
+                        this.Close();
+                    }
+                    //If bediende 
+                    else if (user.userCode == 1)
+                    {
+                        this.Hide();
+                        Dashboard = new Dashboard();
+                        Dashboard.DashboardUser(user);
+                        Dashboard.ShowDialog();
+                        this.Close();
+                    }
+                    //if barman
+                    else
+                    {
+                        this.Hide();
+                        BarKitchenDashboard = new BarKitchenDashboard(user);
+                        BarKitchenDashboard.ShowDialog();
+                        this.Close();
+                    }
+                }
+                else
+                    MessageBox.Show("error occured : User does not exist");
             }
-
-            if (txt_LoginUsername.Text == "a")
-            {
-                this.Hide();
-                BarKitchenDashboard barKitchenDashboard = new BarKitchenDashboard();
-                barKitchenDashboard.ShowDialog();
-                this.Close();
-            }
+            //If at least on field is empty -> show error.
             else
-            {
-                this.Hide();
-                Dashboard dashboardVieww = new Dashboard();
-                dashboardVieww.ShowDialog();
-                this.Close();
-            }
-
-
-            ////Check if username and password are not empty.
-            //if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
-            //{
-            //    string userName = txt_LoginUsername.Text;
-            //    string password = txt_LoginPassword.Text;
-            //    User user = user_Service.GetUser(userName, password);
-            //    //If user exist
-            //    if (user.userName != "")
-            //    {
-            //        //If user is Admin
-            //        if (user.userCode == 3)
-            //        {
-            //            this.Hide();
-            //            AdminDashboard adminDashboard = new AdminDashboard();
-            //            adminDashboard.ShowDialog();
-            //            this.Close();
-            //        }
-            //        //If user is not an Admin
-            //        else
-            //        {
-            //            this.Hide();
-            //            Dashboard dashboardView = new Dashboard();
-            //            dashboardView.ShowDialog();
-            //            this.Close();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("error occured : User does not exist");
-            //    }
-            //}
-            ////If at least on field is empty -> show error.
-            //else
-            //{
-            //    MessageBox.Show("Error occured : Username and/ or Password is empty!");
-            //}
-            ////Clear both fields after not succeeded.
-            //txt_LoginPassword.Clear();
-            //txt_LoginUsername.Clear();
-
+                MessageBox.Show("Error occured : Username and/ or Password is empty!");
+            //Clear both fields after not succeeded.
+            txt_LoginPassword.Clear();
+            txt_LoginUsername.Clear();
         }
 
+        //button reset password
         private void btn_resetPsswrd_Click(object sender, EventArgs e)
         {
             this.Hide();

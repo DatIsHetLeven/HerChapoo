@@ -41,6 +41,7 @@
             this.datagrid_Lunch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagrid_Lunch.Location = new System.Drawing.Point(155, 45);
             this.datagrid_Lunch.Name = "datagrid_Lunch";
+            this.datagrid_Lunch.ReadOnly = true;
             this.datagrid_Lunch.Size = new System.Drawing.Size(350, 274);
             this.datagrid_Lunch.TabIndex = 0;
             // 
@@ -84,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.btn_bestellen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_aantal);

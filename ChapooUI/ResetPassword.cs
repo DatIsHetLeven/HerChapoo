@@ -30,8 +30,8 @@ namespace ChapooUI
 
         private void btn_ResetPassword_Click(object sender, EventArgs e)
         {
-            List<UserList> userList = new List<UserList>();
-            userList = User_Service.GetAllUserList();
+            List<User> userList = new List<User>();
+            userList = User_Service.getAllUsers();
             bool checkUserKey = false;
 
             string userKey = txtUserKey.Text.ToString();

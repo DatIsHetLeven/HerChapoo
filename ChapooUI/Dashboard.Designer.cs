@@ -38,14 +38,21 @@
             this.btn_Tafel_8 = new System.Windows.Forms.Button();
             this.btn_Tafel_9 = new System.Windows.Forms.Button();
             this.btn_Tafel_10 = new System.Windows.Forms.Button();
+            this.btn_LogOut = new System.Windows.Forms.Button();
+            this.btn_Red = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_UserName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Tafel_1
             // 
-            this.btn_Tafel_1.Location = new System.Drawing.Point(113, 67);
+            this.btn_Tafel_1.Location = new System.Drawing.Point(112, 105);
             this.btn_Tafel_1.Name = "btn_Tafel_1";
-            this.btn_Tafel_1.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_1.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_1.TabIndex = 0;
             this.btn_Tafel_1.Text = "1";
             this.btn_Tafel_1.UseVisualStyleBackColor = true;
@@ -53,9 +60,9 @@
             // 
             // btn_Tafel_2
             // 
-            this.btn_Tafel_2.Location = new System.Drawing.Point(336, 67);
+            this.btn_Tafel_2.Location = new System.Drawing.Point(316, 105);
             this.btn_Tafel_2.Name = "btn_Tafel_2";
-            this.btn_Tafel_2.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_2.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_2.TabIndex = 1;
             this.btn_Tafel_2.Text = "2";
             this.btn_Tafel_2.UseVisualStyleBackColor = true;
@@ -63,94 +70,171 @@
             // 
             // btn_Tafel_3
             // 
-            this.btn_Tafel_3.Location = new System.Drawing.Point(113, 187);
+            this.btn_Tafel_3.Location = new System.Drawing.Point(512, 105);
             this.btn_Tafel_3.Name = "btn_Tafel_3";
-            this.btn_Tafel_3.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_3.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_3.TabIndex = 2;
             this.btn_Tafel_3.Text = "3";
             this.btn_Tafel_3.UseVisualStyleBackColor = true;
+            this.btn_Tafel_3.Click += new System.EventHandler(this.btn_Tafel_3_Click);
             // 
             // btn_Tafel_4
             // 
-            this.btn_Tafel_4.Location = new System.Drawing.Point(336, 187);
+            this.btn_Tafel_4.Location = new System.Drawing.Point(709, 105);
             this.btn_Tafel_4.Name = "btn_Tafel_4";
-            this.btn_Tafel_4.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_4.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_4.TabIndex = 3;
             this.btn_Tafel_4.Text = "4";
             this.btn_Tafel_4.UseVisualStyleBackColor = true;
+            this.btn_Tafel_4.Click += new System.EventHandler(this.btn_Tafel_4_Click);
             // 
             // btn_Tafel_5
             // 
-            this.btn_Tafel_5.Location = new System.Drawing.Point(113, 303);
+            this.btn_Tafel_5.Location = new System.Drawing.Point(924, 105);
             this.btn_Tafel_5.Name = "btn_Tafel_5";
-            this.btn_Tafel_5.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_5.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_5.TabIndex = 4;
             this.btn_Tafel_5.Text = "5";
             this.btn_Tafel_5.UseVisualStyleBackColor = true;
+            this.btn_Tafel_5.Click += new System.EventHandler(this.btn_Tafel_5_Click);
             // 
             // btn_Tafel_6
             // 
-            this.btn_Tafel_6.Location = new System.Drawing.Point(336, 303);
+            this.btn_Tafel_6.Location = new System.Drawing.Point(112, 335);
             this.btn_Tafel_6.Name = "btn_Tafel_6";
-            this.btn_Tafel_6.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_6.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_6.TabIndex = 5;
             this.btn_Tafel_6.Text = "6";
             this.btn_Tafel_6.UseVisualStyleBackColor = true;
+            this.btn_Tafel_6.Click += new System.EventHandler(this.btn_Tafel_6_Click);
             // 
             // btn_Tafel_7
             // 
-            this.btn_Tafel_7.Location = new System.Drawing.Point(113, 423);
+            this.btn_Tafel_7.Location = new System.Drawing.Point(316, 335);
             this.btn_Tafel_7.Name = "btn_Tafel_7";
-            this.btn_Tafel_7.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_7.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_7.TabIndex = 6;
             this.btn_Tafel_7.Text = "7";
             this.btn_Tafel_7.UseVisualStyleBackColor = true;
+            this.btn_Tafel_7.Click += new System.EventHandler(this.btn_Tafel_7_Click);
             // 
             // btn_Tafel_8
             // 
-            this.btn_Tafel_8.Location = new System.Drawing.Point(336, 423);
+            this.btn_Tafel_8.Location = new System.Drawing.Point(512, 335);
             this.btn_Tafel_8.Name = "btn_Tafel_8";
-            this.btn_Tafel_8.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_8.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_8.TabIndex = 7;
             this.btn_Tafel_8.Text = "8";
             this.btn_Tafel_8.UseVisualStyleBackColor = true;
+            this.btn_Tafel_8.Click += new System.EventHandler(this.btn_Tafel_8_Click);
             // 
             // btn_Tafel_9
             // 
-            this.btn_Tafel_9.Location = new System.Drawing.Point(113, 534);
+            this.btn_Tafel_9.Location = new System.Drawing.Point(709, 335);
             this.btn_Tafel_9.Name = "btn_Tafel_9";
-            this.btn_Tafel_9.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_9.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_9.TabIndex = 8;
             this.btn_Tafel_9.Text = "9";
             this.btn_Tafel_9.UseVisualStyleBackColor = true;
+            this.btn_Tafel_9.Click += new System.EventHandler(this.btn_Tafel_9_Click);
             // 
             // btn_Tafel_10
             // 
-            this.btn_Tafel_10.Location = new System.Drawing.Point(336, 534);
+            this.btn_Tafel_10.Location = new System.Drawing.Point(924, 335);
             this.btn_Tafel_10.Name = "btn_Tafel_10";
-            this.btn_Tafel_10.Size = new System.Drawing.Size(119, 79);
+            this.btn_Tafel_10.Size = new System.Drawing.Size(134, 99);
             this.btn_Tafel_10.TabIndex = 9;
             this.btn_Tafel_10.Text = "10";
             this.btn_Tafel_10.UseVisualStyleBackColor = true;
+            this.btn_Tafel_10.Click += new System.EventHandler(this.btn_Tafel_10_Click);
+            // 
+            // btn_LogOut
+            // 
+            this.btn_LogOut.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_LogOut.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_LogOut.Location = new System.Drawing.Point(12, 12);
+            this.btn_LogOut.Name = "btn_LogOut";
+            this.btn_LogOut.Size = new System.Drawing.Size(101, 35);
+            this.btn_LogOut.TabIndex = 10;
+            this.btn_LogOut.Text = "Log Out";
+            this.btn_LogOut.UseVisualStyleBackColor = false;
+            this.btn_LogOut.Click += new System.EventHandler(this.btn_LogOut_Click_1);
+            // 
+            // btn_Red
+            // 
+            this.btn_Red.BackColor = System.Drawing.Color.Red;
+            this.btn_Red.Location = new System.Drawing.Point(1040, 555);
+            this.btn_Red.Name = "btn_Red";
+            this.btn_Red.Size = new System.Drawing.Size(42, 34);
+            this.btn_Red.TabIndex = 11;
+            this.btn_Red.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1088, 576);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "= Tafel gereserveerd";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkRed;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.Location = new System.Drawing.Point(1040, 595);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 35);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Log Out";
+            this.button1.Size = new System.Drawing.Size(42, 34);
+            this.button1.TabIndex = 26;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1088, 617);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "= Tafel is vrij";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Blue;
+            this.button2.Location = new System.Drawing.Point(1040, 635);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 34);
+            this.button2.TabIndex = 28;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1088, 656);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "= Lopende order";
+            // 
+            // lbl_UserName
+            // 
+            this.lbl_UserName.AutoSize = true;
+            this.lbl_UserName.Location = new System.Drawing.Point(183, 12);
+            this.lbl_UserName.Name = "lbl_UserName";
+            this.lbl_UserName.Size = new System.Drawing.Size(0, 13);
+            this.lbl_UserName.TabIndex = 48;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 653);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lbl_UserName);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_Red);
+            this.Controls.Add(this.btn_LogOut);
             this.Controls.Add(this.btn_Tafel_10);
             this.Controls.Add(this.btn_Tafel_9);
             this.Controls.Add(this.btn_Tafel_8);
@@ -163,8 +247,8 @@
             this.Controls.Add(this.btn_Tafel_1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
-            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -180,6 +264,13 @@
         private System.Windows.Forms.Button btn_Tafel_8;
         private System.Windows.Forms.Button btn_Tafel_9;
         private System.Windows.Forms.Button btn_Tafel_10;
+        private System.Windows.Forms.Button btn_LogOut;
+        private System.Windows.Forms.Button btn_Red;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_UserName;
     }
 }

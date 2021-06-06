@@ -14,17 +14,19 @@ namespace ChapooUI
 {
     public partial class Bestellen : Form
     {
-        
         int TableId;
+        List<ChapooModel.MenuItem> menuItems = new List<ChapooModel.MenuItem>();
+        List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
         Table_Service table_Service = new Table_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
+        List<ChapooModel.MenuItem> menuItemList = new List<ChapooModel.MenuItem>();
+        List<int> invoerAantal = new List<int>();
         public Bestellen(int tableid)
         {
+            InitializeComponent();
             this.TableId = tableid;
             MenuItem_Service menuItem_Service = new MenuItem_Service();
 
-            InitializeComponent();
-            List<int> invoerAantal = new List<int>();
             invoerAantal.Add(1);
             invoerAantal.Add(2);
             invoerAantal.Add(3);
@@ -37,11 +39,60 @@ namespace ChapooUI
             invoerAantal.Add(10);
 
             drop_InvoerAantal.DataSource = invoerAantal;
-            List<ChapooModel.MenuItem> menuItemList = new List<ChapooModel.MenuItem>();
-            menuItemList = menuItem_Service.GetMenuItems();
-            datagrid_Lunch.DataSource = menuItemList;
-        }
 
+            menuItemList = menuItem_Service.GetMenuItems();
+            foreach (var i in menuItemList)
+            {
+                if (i.MenuId == 2)
+                {
+                    menuItems.Add(i);
+                    datagrid_Lunch.DataSource = menuItems;
+                }
+            }
+        }
+        //Button bestellen
+        private void btn_bestellen_Click(object sender, EventArgs e)
+        {
+            //Gekozen aantal
+            int invoer = drop_InvoerAantal.SelectedIndex + 1;
+            int item = datagrid_Lunch.CurrentCell.RowIndex;
+            string prijs = datagrid_Lunch.Rows[item].Cells[0].FormattedValue.ToString();
+            int prijs1 = int.Parse(prijs);
+
+            if (invoer > 0)
+            {
+                //Daadwerklijke prijs berekenen. 
+                int verm = prijs1 * invoer;
+                MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + verm.ToString());
+                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
+                table_Service.ChangeTableStatus(TableId, 3);
+            }
+            ShowSelectedItems();
+        }
+        //Button refresh
+        private void Btn_Refresh_Click(object sender, EventArgs e)
+        {
+            List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
+            selectedItemsMaking = selectedItems_Service.GetMakingOrder(TableId, 1);
+            datagrid_Making.DataSource = selectedItemsMaking;
+        }
+        //Go Drinks
+        private void Btn_Go_Drinks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BestellenDranken bestellenDiner = new BestellenDranken(TableId, menuItemList, invoerAantal);
+            bestellenDiner.ShowDialog();
+            this.Close();
+        }
+        //Go Diner
+        private void Btn_Go_Diner_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BestellenDiner bestellenDiner = new BestellenDiner(TableId, menuItemList, invoerAantal);
+            bestellenDiner.ShowDialog();
+            this.Close();
+        }
+        //Back to Dashboard
         private void btn_Back_To_Dashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -49,44 +100,40 @@ namespace ChapooUI
             dashboardView.ShowDialog();
             this.Close();
         }
-
-        private void btn_bestellen_Click(object sender, EventArgs e)
+        private void ShowSelectedItems()
         {
+            selectedItemsMaking = selectedItems_Service.GetMakingOrder(TableId, 1);
+            datagrid_Making.DataSource = selectedItemsMaking;
+        }
 
+        private void Bestellen_Load_1(object sender, EventArgs e)
+        {
+            ShowSelectedItems();
+        }
 
-            int item = datagrid_Lunch.CurrentCell.RowIndex;
-            string prijs = datagrid_Lunch.Rows[item].Cells[0].FormattedValue.ToString();
-            string aantal = txt_aantal.Text.ToString();
-            int aantalInvoer = int.Parse(aantal);
-            int prijs1 = int.Parse(prijs);
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            int item = datagrid_Making.CurrentCell.RowIndex;
+            string menuitem = datagrid_Making.Rows[item].Cells["menuItem"].FormattedValue.ToString();
+            selectedItems_Service.updateStatus(menuitem, TableId, 0);
+            ShowSelectedItems();
+        }
 
-            if (aantal != "" && aantalInvoer > 0)
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ShowSelectedItems();
+            try
             {
-                int prijs2 = int.Parse(aantal);
-                int verm = prijs1 * prijs2;
-                MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + txt_aantal.Text.ToString() + " , Prijs : " + verm.ToString());
-                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
-                table_Service.SetTableInUse(TableId);
+                int item = datagrid_Making.CurrentCell.RowIndex;
+                string menuitem = datagrid_Making.Rows[item].Cells["menuItem"].FormattedValue.ToString();
+                selectedItems_Service.updateStatus(menuitem, TableId, 2);
+                ShowSelectedItems();
             }
-            else
-                MessageBox.Show("Please put in valid number");
-            txt_aantal.Clear();
-        }
+            catch (Exception)
+            {
 
-        private void Btn_Go_Diner_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            BestellenDiner bestellenDiner = new BestellenDiner(TableId);
-            bestellenDiner.ShowDialog();
-            this.Close();
-        }
-
-        private void Btn_Go_Drinks_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            BestellenDranken bestellenDiner = new BestellenDranken(TableId);
-            bestellenDiner.ShowDialog();
-            this.Close();
+                MessageBox.Show("Niks om te bestellen");
+            }
         }
     }
 }

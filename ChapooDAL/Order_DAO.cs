@@ -22,7 +22,7 @@ namespace ChapooDAL
 
             foreach (DataRow item in datatable.Rows)
             {
-                    int Id = (int)item["id"];
+                int Id = (int)item["id"];
                 MaxId.Add(Id);
             }
             return MaxId;
@@ -36,3 +36,4 @@ namespace ChapooDAL
         }
     }
 }
+

@@ -20,13 +20,15 @@ namespace ChapooUI
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         Dashboard dashboard;
         Table_Service table_Service = new Table_Service();
-
-
-        public Payment(int totalAmount,int tableId)
+        List<SelectedItem> SelectedItems = new List<SelectedItem>();
+        public Payment(int totalAmount, int tableId, List<SelectedItem> selectedItems)
         {
+            InitializeComponent();
             this.TotalAmount = totalAmount;
             this.TableId = tableId;
-            InitializeComponent();
+            this.SelectedItems = selectedItems;
+
+            datagrid_AllInfo.DataSource = SelectedItems;
 
             txt_Amount.Text = TotalAmount.ToString();
 
@@ -35,28 +37,20 @@ namespace ChapooUI
             txt_TotalAmount.Text = totalToPay.ToString();
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
+        private void btn_PayIdeal_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            dashboard = new Dashboard();
-            dashboard.ShowDialog();
-            this.Close();
-        }
-
-        private void btn_PayIdeal_Click(object sender, EventArgs e)
-        {
-            table_Service.SetTableFree(TableId);
+            table_Service.ChangeTableStatus(TableId, 1);
             FinishPayment();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            table_Service.SetTableFree(TableId);
+            table_Service.ChangeTableStatus(TableId, 1);
             FinishPayment();
         }
         private void FinishPayment()
         {
-            //table_Service.SetTableFree(TableId);
+            table_Service.ChangeTableStatus(TableId, 1);
 
             MessageBox.Show("Payment was successfully!");
             this.Hide();
@@ -64,5 +58,15 @@ namespace ChapooUI
             dashboard.ShowDialog();
             this.Close();
         }
+
+        private void Btn_Refresh_Click_1(object sender, EventArgs e)
+        {
+            int prijsZonderTip = int.Parse(txt_Amount.Text);
+            int Fooi = int.Parse(txt_TipAmount.Text);
+            int totaalPrijs = prijsZonderTip + Fooi;
+
+            txt_TotalAmount.Text = totaalPrijs.ToString();
+        }
     }
 }
+

@@ -15,16 +15,20 @@ namespace ChapooUI
 {
     public partial class BarKitchenDashboard : Form
     {
-        List<SelectedItem> selectedItems ;
+        User User;
+        List<SelectedItem> selectedItems;
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
-        public BarKitchenDashboard()
+        public BarKitchenDashboard(User user)
         {
             InitializeComponent();
+            this.User = user;
+        }
 
-            Timer timer = new Timer();
-            timer.Interval = (5 * 1000); 
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
+        private void Btn_Refresh_Click(object sender, EventArgs e)
+        {
+            selectedItems = new List<SelectedItem>();
+            selectedItems = selectedItems_Service.GetSelectedItems();
+            datgrid_OpenOrder.DataSource = selectedItems;
         }
 
         private void btn_UpdateStatus_Click(object sender, EventArgs e)
@@ -33,20 +37,15 @@ namespace ChapooUI
 
             string menuitem = datgrid_OpenOrder.Rows[item].Cells["menuItem"].FormattedValue.ToString();
             string tableId = datgrid_OpenOrder.Rows[item].Cells["tableid"].FormattedValue.ToString();
-            selectedItems_Service.updateStatus(menuitem, int.Parse(tableId));
+            selectedItems_Service.updateStatus(menuitem, int.Parse(tableId), 3);
         }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             login login = new login();
             login.ShowDialog();
             this.Close();
-        }
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            selectedItems = new List<SelectedItem>();
-            selectedItems = selectedItems_Service.GetSelectedItems();
-            datgrid_OpenOrder.DataSource = selectedItems;
         }
     }
 }

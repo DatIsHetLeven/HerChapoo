@@ -15,16 +15,23 @@ namespace ChapooDAL
             string query = $"Insert into[selecteditems] (tableId, menuItem, Prijs, status) Values('{tableid}', '{item}', '{prijs}', 1)";
             ExecuteEditQuery(query);
         }
+
+        //Insert
+        public void InsertNewSelectedItemToKitchen(int tableid, string item, int prijs)
+        {
+            string query = $"Insert into[selecteditems] (tableId, menuItem, Prijs, status) Values('{tableid}', '{item}', '{prijs}', 5)";
+            ExecuteEditQuery(query);
+        }
         //Select for bar& kitchen
         public List<SelectedItem> GetSelectedItems()
         {
-            string query = "select tableId, menuItem, Prijs, status from [SelectedItems] where status = 1";
+            string query = "select tableId, menuItem, Prijs, status from [SelectedItems] where status = 2";
             return GetItems(ExecuteSelectQuery(query));
         }
         //Select order
         public List<SelectedItem> GetSelectedOrder(int tableid)
         {
-            string query = $"select tableId, menuItem, Prijs, status from [SelectedItems] where tableId = '{tableid}' and status =2";
+            string query = $"select tableId, menuItem, Prijs, status from [SelectedItems] where tableId = '{tableid}' and status =3";
             return GetItems(ExecuteSelectQuery(query));
         }
         //Return
@@ -35,7 +42,8 @@ namespace ChapooDAL
             int Prijs = 0;
             int status = 0;
             List<SelectedItem> selectedItems = new List<SelectedItem>();
-            foreach (DataRow item in dataTable.Rows){
+            foreach (DataRow item in dataTable.Rows)
+            {
 
                 tableId = (int)item["tableId"];
                 menuItem = (string)item["menuItem"].ToString();
@@ -45,12 +53,13 @@ namespace ChapooDAL
                 {
                     selectedItems.Add(selectedItem);
                 }
-            }return selectedItems;
+            }
+            return selectedItems;
         }
         //Update
-        public void UpdateStatus(string menuItem, int tableId)
+        public void UpdateStatus(string menuItem, int tableId, int status)
         {
-            string query = $"update SelectedItems set status = 2 where MenuItem = '{menuItem}' and tableId = '{tableId}'";
+            string query = $"update SelectedItems set status = '{status}' where MenuItem = '{menuItem}' and tableId = '{tableId}'";
             ExecuteEditQuery(query);
         }
         //delete
@@ -58,6 +67,12 @@ namespace ChapooDAL
         {
             string query = $"delete from [SelectedItems] where tableId = '{tableid}'";
             ExecuteEditQuery(query);
+        }
+        //Select order
+        public List<SelectedItem> GetMakingOrder(int tableid, int status)
+        {
+            string query = $"select tableId, menuItem, Prijs, status from [SelectedItems] where tableId = '{tableid}' and status ='{status}'";
+            return GetItems(ExecuteSelectQuery(query));
         }
 
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAllUsers));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.drop_UserRol = new System.Windows.Forms.ComboBox();
@@ -50,16 +51,19 @@
             this.btn_BackAdminDasboard = new System.Windows.Forms.Button();
             this.Btn_CreateUser = new System.Windows.Forms.Button();
             this.Btn_ChangePassword = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(161, 26);
+            this.dataGridView1.Location = new System.Drawing.Point(228, 53);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 158);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(639, 217);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -80,11 +84,10 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(1, 237);
+            this.panel1.Location = new System.Drawing.Point(167, 359);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 212);
             this.panel1.TabIndex = 12;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // drop_UserRol
             // 
@@ -103,7 +106,6 @@
             this.btn_AddPrivateKey.TabIndex = 27;
             this.btn_AddPrivateKey.Text = "Add Private Key";
             this.btn_AddPrivateKey.UseVisualStyleBackColor = false;
-            this.btn_AddPrivateKey.Click += new System.EventHandler(this.btn_AddPrivateKey_Click);
             // 
             // txt_PrivateKey
             // 
@@ -147,7 +149,6 @@
             this.btn_CreateNewUser.TabIndex = 20;
             this.btn_CreateNewUser.Text = "Create user";
             this.btn_CreateNewUser.UseVisualStyleBackColor = false;
-            this.btn_CreateNewUser.Click += new System.EventHandler(this.btn_CreateNewUser_Click);
             // 
             // txt_UserPassword
             // 
@@ -221,7 +222,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(269, 224);
+            this.panel2.Location = new System.Drawing.Point(435, 346);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(15, 225);
             this.panel2.TabIndex = 18;
@@ -229,7 +230,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(548, 224);
+            this.panel3.Location = new System.Drawing.Point(714, 346);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(15, 225);
             this.panel3.TabIndex = 19;
@@ -247,7 +248,7 @@
             // 
             // Btn_CreateUser
             // 
-            this.Btn_CreateUser.Location = new System.Drawing.Point(74, 202);
+            this.Btn_CreateUser.Location = new System.Drawing.Point(240, 324);
             this.Btn_CreateUser.Name = "Btn_CreateUser";
             this.Btn_CreateUser.Size = new System.Drawing.Size(125, 29);
             this.Btn_CreateUser.TabIndex = 21;
@@ -257,7 +258,7 @@
             // 
             // Btn_ChangePassword
             // 
-            this.Btn_ChangePassword.Location = new System.Drawing.Point(634, 202);
+            this.Btn_ChangePassword.Location = new System.Drawing.Point(800, 324);
             this.Btn_ChangePassword.Name = "Btn_ChangePassword";
             this.Btn_ChangePassword.Size = new System.Drawing.Size(125, 29);
             this.Btn_ChangePassword.TabIndex = 22;
@@ -265,11 +266,23 @@
             this.Btn_ChangePassword.UseVisualStyleBackColor = true;
             this.Btn_ChangePassword.Click += new System.EventHandler(this.Btn_ChangePassword_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1014, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(239, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdminAllUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Btn_ChangePassword);
             this.Controls.Add(this.Btn_CreateUser);
             this.Controls.Add(this.btn_BackAdminDasboard);
@@ -283,6 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,5 +325,6 @@
         private System.Windows.Forms.ComboBox drop_UserRol;
         private System.Windows.Forms.Button Btn_CreateUser;
         private System.Windows.Forms.Button Btn_ChangePassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

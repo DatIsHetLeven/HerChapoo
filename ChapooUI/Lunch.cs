@@ -49,7 +49,7 @@ namespace ChapooUI
                 int verm = prijs1 * prijs2;
                 MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + txt_aantal.Text.ToString() + " , Prijs : " + verm.ToString());
                 selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
-                table_Service.SetTableInUse(TableId);
+                table_Service.ChangeTableStatus(TableId,3);
             }
             else
                 MessageBox.Show("Please put in valid number");

@@ -41,22 +41,23 @@
             // 
             // txt_LoginUsername
             // 
-            this.txt_LoginUsername.Location = new System.Drawing.Point(181, 246);
+            this.txt_LoginUsername.Location = new System.Drawing.Point(455, 236);
             this.txt_LoginUsername.Name = "txt_LoginUsername";
-            this.txt_LoginUsername.Size = new System.Drawing.Size(239, 20);
+            this.txt_LoginUsername.Size = new System.Drawing.Size(269, 20);
             this.txt_LoginUsername.TabIndex = 0;
             // 
             // txt_LoginPassword
             // 
-            this.txt_LoginPassword.Location = new System.Drawing.Point(181, 313);
+            this.txt_LoginPassword.Location = new System.Drawing.Point(455, 332);
             this.txt_LoginPassword.Name = "txt_LoginPassword";
-            this.txt_LoginPassword.Size = new System.Drawing.Size(239, 20);
+            this.txt_LoginPassword.PasswordChar = '*';
+            this.txt_LoginPassword.Size = new System.Drawing.Size(269, 20);
             this.txt_LoginPassword.TabIndex = 1;
             // 
             // lbl_gebruikersnaam
             // 
             this.lbl_gebruikersnaam.AutoSize = true;
-            this.lbl_gebruikersnaam.Location = new System.Drawing.Point(178, 230);
+            this.lbl_gebruikersnaam.Location = new System.Drawing.Point(452, 211);
             this.lbl_gebruikersnaam.Name = "lbl_gebruikersnaam";
             this.lbl_gebruikersnaam.Size = new System.Drawing.Size(84, 13);
             this.lbl_gebruikersnaam.TabIndex = 10;
@@ -65,7 +66,7 @@
             // lbl_wachtwoord
             // 
             this.lbl_wachtwoord.AutoSize = true;
-            this.lbl_wachtwoord.Location = new System.Drawing.Point(178, 297);
+            this.lbl_wachtwoord.Location = new System.Drawing.Point(452, 306);
             this.lbl_wachtwoord.Name = "lbl_wachtwoord";
             this.lbl_wachtwoord.Size = new System.Drawing.Size(68, 13);
             this.lbl_wachtwoord.TabIndex = 11;
@@ -75,7 +76,7 @@
             // 
             this.btn_Inloggen.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Inloggen.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Inloggen.Location = new System.Drawing.Point(211, 381);
+            this.btn_Inloggen.Location = new System.Drawing.Point(455, 441);
             this.btn_Inloggen.Name = "btn_Inloggen";
             this.btn_Inloggen.Size = new System.Drawing.Size(182, 63);
             this.btn_Inloggen.TabIndex = 12;
@@ -85,7 +86,7 @@
             // 
             // btn_resetPsswrd
             // 
-            this.btn_resetPsswrd.Location = new System.Drawing.Point(378, 339);
+            this.btn_resetPsswrd.Location = new System.Drawing.Point(726, 362);
             this.btn_resetPsswrd.Name = "btn_resetPsswrd";
             this.btn_resetPsswrd.Size = new System.Drawing.Size(75, 23);
             this.btn_resetPsswrd.TabIndex = 14;
@@ -96,7 +97,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(275, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(1043, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 107);
@@ -108,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 559);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.btn_resetPsswrd);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Inloggen);

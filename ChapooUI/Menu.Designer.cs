@@ -87,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 562);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.btn_Back_To_TableChoice);
             this.Controls.Add(this.Btn_Order_Overview);
             this.Controls.Add(this.btn_Drank);

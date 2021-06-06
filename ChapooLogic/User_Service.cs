@@ -27,10 +27,10 @@ namespace ChapooLogic
         {
             user_DAO.InsertPrivateKey(privateKey, userId);
         }
-        public List<UserList> GetAllUserList()
+        public List<User> getAllUsers()
         {
-            List<UserList> userList;
-            userList = user_DAO.getAllUsersList();
+            List<User> userList;
+            userList = user_DAO.getAllUsers();
             return userList;
         }
         //Reset Password

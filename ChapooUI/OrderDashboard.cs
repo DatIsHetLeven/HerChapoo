@@ -20,18 +20,24 @@ namespace ChapooUI
         Order_Service order_Service = new Order_Service();
 
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
+        List<SelectedItem> selectedItemsDelivered = new List<SelectedItem>();
+
         public OrderDashboard(int tableId)
         {
             InitializeComponent();
             this.TableId = tableId;
             int totalAmount = 0;
-            
 
-            List<SelectedItem> selectedItems = new List<SelectedItem>();
-            selectedItems = selectedItems_Service.GetCurrentItems(tableId);
-            datagrid_CurrentOrder.DataSource = selectedItems;
 
-            
+            List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
+            selectedItemsMaking = selectedItems_Service.GetMakingOrder(tableId, 2);
+            datagrid_Making.DataSource = selectedItemsMaking;
+
+
+            selectedItemsDelivered = selectedItems_Service.GetCurrentItems(tableId);
+            datagrid_CurrentOrder.DataSource = selectedItemsDelivered;
+
+
             for (int i = 0; i < datagrid_CurrentOrder.Rows.Count; i++)
             {
                 totalAmount += Convert.ToInt32(datagrid_CurrentOrder.Rows[i].Cells[2].Value);
@@ -40,17 +46,8 @@ namespace ChapooUI
 
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Dashboard menuView = new Dashboard();
-            menuView.ShowDialog();
-            this.Close();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-
             //List of all items
             List<SelectedItem> selectedItems = new List<SelectedItem>();
             selectedItems = selectedItems_Service.GetCurrentItems(TableId);
@@ -77,9 +74,18 @@ namespace ChapooUI
 
             selectedItems_Service.removeItems(TableId);
             this.Hide();
-            Payment payment = new Payment(TotalPrice, TableId);
+            Payment payment = new Payment(TotalPrice, TableId, selectedItemsDelivered);
             payment.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard menuView = new Dashboard();
+            menuView.ShowDialog();
             this.Close();
         }
     }
 }
+
